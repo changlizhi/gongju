@@ -16,6 +16,7 @@ func Biaolies() (biaolie map[string]string, biao map[string]string, lie map[stri
 	biao = make(map[string]string)
 	lie = make(map[string]string)
 	ffs := Pipeifangfa(
+		Getjichupath(),
 		zf.Zfs.Sjk(true),
 		zf.Zfs.Sjk(false),
 		zf.Zfs.Sjk(true) + Mokuaimings[zf.Zfs.Hfxyonghu(false)].Zhi,
@@ -89,10 +90,10 @@ func Biao(mingcheng string) []string {
 	return biaojiegou[mingcheng]
 }
 
-func Pipeifangfa(canshu string, canshuleixing string, muluming string, wenjianming string) []string {
+func Pipeifangfa(pathfrom string, canshu string, canshuleixing string, muluming string, wenjianming string) []string {
 	fu1 := zfzhi.Zhi.Shuzifu1()
 
-	path := Getchangliangpath() + zfzhi.Zhi.Xx() + muluming +
+	path := pathfrom + zfzhi.Zhi.Xx() + muluming +
 		zfzhi.Zhi.Xx() + wenjianming + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
 	b, _ := ioutil.ReadFile(path)
 	//从匹配的方法名中去除前面对于的正则表达式

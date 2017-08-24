@@ -22,6 +22,12 @@ func Jsonliezhiding(lieming string) string {
 	return ret
 }
 func Yigejsonlies(jsonming string) []string {
-	ret := Pipeifangfa(zf.Zfs.Jl(true), zf.Zfs.Jl(false), zf.Zfs.Jsonlie(true), jsonming)
+	ret := Pipeifangfa(
+		Getchangliangpath(),
+		zf.Zfs.Jl(true),
+		zf.Zfs.Jl(false),
+		zf.Zfs.Jsonlie(true),
+		jsonming,
+	)
 	return ret
 }
