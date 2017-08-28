@@ -13,7 +13,8 @@ import (
 var Chushihuas = make(map[string]Tongyong)
 var Mokuaimings = make(map[string]Tongyong)
 var Mulus = make(map[string]Tongyong)
-var Jsonlies = make(map[string]Tongyong)
+var Jsonlies0 = make(map[string]Tongyong)
+var Jsonlies1 = make(map[string]Tongyong)
 var Jsonmojis = make(map[string]Tongyong)
 
 func init() {
@@ -28,7 +29,12 @@ func chushihua_json() {
 		Mulus[c.Bianma] = c
 	}
 	for _, c := range shezhi.Jsonlie {
-		Jsonlies[c.Bianma] = c
+		if Jsonliejibie(c.Bianma) == zfzhi.Zhi.Shuzi0() {
+			Jsonlies0[c.Bianma] = c
+		}
+		if Jsonliejibie(c.Bianma) == zfzhi.Zhi.Shuzi1() {
+			Jsonlies1[c.Bianma] = c
+		}
 	}
 	for _, c := range shezhi.Jsonmoji {
 		Jsonmojis[c.Bianma] = c
