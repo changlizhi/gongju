@@ -17,8 +17,8 @@ func Biaolies() (biaolie map[string]string, biao map[string]string, lie map[stri
 	lie = make(map[string]string)
 	ffs := Pipeifangfa(
 		Getjichupath(),
-		zf.Zfs.Sjk(true),
-		zf.Zfs.Sjk(false),
+		zf.Zfs.Sjk(true) + Mokuaimings[zf.Zfs.Hfxyonghu(false)].Zhi,
+		zf.Zfs.Sjk(false) + Mokuaimings[zf.Zfs.Hfxyonghu(false)].Zhi,
 		zf.Zfs.Sjk(true) + Mokuaimings[zf.Zfs.Hfxyonghu(false)].Zhi,
 		zf.Zfs.Biaolie(false))
 	// "[A-Z][a-z]+"//正则表达式匹配驼峰命名的方法
