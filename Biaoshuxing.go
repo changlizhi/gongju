@@ -11,7 +11,7 @@ import (
 	"log"
 )
 
-func Biaolies() (biaolie map[string]string, biao map[string]string, lie map[string]string) {
+func Biaolies(mokuaiming string) (biaolie map[string]string, biao map[string]string, lie map[string]string) {
 	biaolie = make(map[string]string)
 	biao = make(map[string]string)
 	lie = make(map[string]string)
@@ -40,7 +40,7 @@ func Biaolies() (biaolie map[string]string, biao map[string]string, lie map[stri
 	return
 }
 
-func Suoyoubiaojiegou() map[string][]string {
+func Suoyoubiaojiegou(mokuaiming string) map[string][]string {
 	ret := make(map[string][]string)
 	// "[A-Z][a-z]+"//正则表达式匹配驼峰命名的方法
 	repstr := zfzhi.Zhi.Zkhz() +
@@ -52,7 +52,7 @@ func Suoyoubiaojiegou() map[string][]string {
 		zfzhi.Zhi.Jia()
 	rep, _ := regexp.CompilePOSIX(repstr)
 
-	biaolie, biao, _ := Biaolies()
+	biaolie, biao, _ := Biaolies(mokuaiming)
 	for bk, _ := range biao {
 		lies := []string{}
 		for blk, _ := range biaolie {
@@ -85,8 +85,8 @@ func Lieleixing(lieming string) string {
 	return ret
 }
 
-func Biao(mingcheng string) []string {
-	biaojiegou := Suoyoubiaojiegou()
+func Biao(mokuaiming string, mingcheng string) []string {
+	biaojiegou := Suoyoubiaojiegou(mokuaiming)
 	return biaojiegou[mingcheng]
 }
 
