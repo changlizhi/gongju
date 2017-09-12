@@ -1,25 +1,26 @@
 package tests
 
 import (
-	"gongju"
-	"testing"
-	"log"
 	"changliang/zf"
+	"gongju"
+	"log"
+	"testing"
 )
-func TestBiaolie(t *testing.T){
+
+func TestBiaolie(t *testing.T) {
 	log.Println(gongju.Biaolies(zf.Zfs.Hfxyonghu(true)))
 	log.Println(gongju.Biaolies(zf.Zfs.Mhsyyonghu(true)))
 }
 
-func TestBiaojiegou(t *testing.T){
+func TestBiaojiegou(t *testing.T) {
 	log.Println(gongju.Suoyoubiaojiegou(zf.Zfs.Hfxyonghu(true)))
 }
-func TestBiao(t *testing.T){
-	log.Println(gongju.Biao(zf.Zfs.Hfxyonghu(true),"Juese"))
+func TestBiao(t *testing.T) {
+	log.Println(gongju.Biao(zf.Zfs.Hfxyonghu(true), "Juese"))
 }
-func TestLieleixing(t *testing.T){
+func TestLieleixing(t *testing.T) {
 	log.Println(gongju.Lieleixing("Id"))
 }
-func TestLiechangdu(t *testing.T){
+func TestLiechangdu(t *testing.T) {
 	log.Println(gongju.Liechangdu("Id"))
 }

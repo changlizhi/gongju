@@ -1,13 +1,13 @@
 package gongju
 
 import (
-	"io/ioutil"
-	"runtime"
-	"path/filepath"
-	"encoding/json"
-	"changliang/zfzhi"
 	"changliang/zf"
+	"changliang/zfzhi"
+	"encoding/json"
+	"io/ioutil"
 	"log"
+	"path/filepath"
+	"runtime"
 	"sort"
 )
 
@@ -73,6 +73,7 @@ func Getjichupath() string {
 func Getchangliangpath() string {
 	return Getpath(zf.Zfs.Changliang(true))
 }
+
 // 获取文件目录，直接返回文件目录结构，不论文件是否存在
 func Getwenjianmulu(mokuaiming string, mulu string, wenjian string, leixing string) string {
 	path := Getpath(mokuaiming) + // apppath
@@ -90,6 +91,7 @@ func Getjichujsonpath(bianma string) string {
 	path := Getwenjianmulu(zf.Zfs.Jichu(true), zf.Zfs.Peizhi(true), bianma, zf.Zfs.Json(true))
 	return path
 }
+
 // 获取app/xxx.json的目录
 func Getappjsonpath(bianma string) string {
 	path := Getwenjianmulu(Mokuaimings[zf.Zfs.Hfxyonghu(false)].Zhi, zf.Zfs.Peizhi(true), bianma, zf.Zfs.Json(true))

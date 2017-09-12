@@ -9,7 +9,7 @@ import (
 
 //ECB PKCS5Padding
 func PKCS5Padding(ciphertext []byte, blockSize int) []byte {
-	padding := blockSize - len(ciphertext) % blockSize
+	padding := blockSize - len(ciphertext)%blockSize
 	padtext := bytes.Repeat([]byte{byte(padding)}, padding)
 	return append(ciphertext, padtext...)
 }
@@ -17,7 +17,7 @@ func PKCS5Padding(ciphertext []byte, blockSize int) []byte {
 //ECB PKCS5Unpadding
 func PKCS5Unpadding(origData []byte) []byte {
 	length := len(origData)
-	unpadding := int(origData[length - 1])
+	unpadding := int(origData[length-1])
 	return origData[:(length - unpadding)]
 }
 
@@ -31,7 +31,7 @@ func Encrypt(origData, key []byte) ([]byte, error) {
 		return nil, err
 	}
 	bs := block.BlockSize()
-	if len(origData) % bs != 0 {
+	if len(origData)%bs != 0 {
 		return nil, errors.New("wrong padding,block size:=" + strconv.Itoa(bs) + " len(origindata) := " + strconv.Itoa(len(origData)))
 	}
 	out := make([]byte, len(origData))
@@ -56,7 +56,7 @@ func Decrypt(crypted, key []byte) ([]byte, error) {
 	out := make([]byte, len(crypted))
 	dst := out
 	bs := block.BlockSize()
-	if len(crypted) % bs != 0 {
+	if len(crypted)%bs != 0 {
 		return nil, errors.New("wrong crypted size")
 	}
 

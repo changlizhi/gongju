@@ -1,14 +1,14 @@
 package gongju
 
 import (
-	"strings"
-	"changliang/zf"
-	"regexp"
-	"io/ioutil"
-	"changliang/zfzhi"
 	"changliang/biaolie"
-	"reflect"
+	"changliang/zf"
+	"changliang/zfzhi"
+	"io/ioutil"
 	"log"
+	"reflect"
+	"regexp"
+	"strings"
 )
 
 func Biaolies(mokuaiming string) (biaolie map[string]string, biao map[string]string, lie map[string]string) {
@@ -17,9 +17,9 @@ func Biaolies(mokuaiming string) (biaolie map[string]string, biao map[string]str
 	lie = make(map[string]string)
 	ffs := Pipeifangfa(
 		Getjichupath(),
-		zf.Zfs.Sjk(true) + mokuaiming,
-		zf.Zfs.Sjk(false) + mokuaiming,
-		zf.Zfs.Sjk(true) + mokuaiming,
+		zf.Zfs.Sjk(true)+mokuaiming,
+		zf.Zfs.Sjk(false)+mokuaiming,
+		zf.Zfs.Sjk(true)+mokuaiming,
 		zf.Zfs.Biaolie(false))
 	// "[A-Z][a-z]+"//正则表达式匹配驼峰命名的方法
 	repstr := zfzhi.Zhi.Zkhz() +

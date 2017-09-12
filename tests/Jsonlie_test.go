@@ -2,9 +2,10 @@ package tests
 
 import (
 	"changliang/jsonlie"
-	"testing"
 	"log"
+	"testing"
 )
-func TestCuowu(t *testing.T){
+
+func TestCuowu(t *testing.T) {
 	log.Println(jsonlie.Jls.Cuowu(false))
 }
