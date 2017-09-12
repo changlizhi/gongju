@@ -61,12 +61,6 @@ func Getpath(mokuaiming string) string {
 func Getgopath() string {
 	return Getpath(zf.Zfs.Gopath(true))
 }
-func Gethanfuxinpath() string {
-	return Getpath(zf.Zfs.Hanfuxin(true))
-}
-func Getapppath() string {
-	return Getpath(Mokuaimings[zf.Zfs.Hfxyonghu(false)].Zhi)
-}
 func Getjichupath() string {
 	return Getpath(zf.Zfs.Jichu(true))
 }
@@ -92,11 +86,6 @@ func Getjichujsonpath(bianma string) string {
 	return path
 }
 
-// 获取app/xxx.json的目录
-func Getappjsonpath(bianma string) string {
-	path := Getwenjianmulu(Mokuaimings[zf.Zfs.Hfxyonghu(false)].Zhi, zf.Zfs.Peizhi(true), bianma, zf.Zfs.Json(true))
-	return path
-}
 func Shezhipath() string {
 	return Getjichujsonpath(zf.Zfs.Shezhi(false)) //yingyong
 }
