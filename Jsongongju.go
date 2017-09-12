@@ -8,10 +8,12 @@ import (
 	"changliang/zfzhi"
 	"changliang/zf"
 	"log"
+	"sort"
 )
 
 var Chushihuas = make(map[string]Tongyong)
 var Mokuaimings = make(map[string]Tongyong)
+var Mokuaimingsarr = []string{}
 var Mulus = make(map[string]Tongyong)
 var Jsonlies0 = make(map[string]Tongyong)
 var Jsonlies1 = make(map[string]Tongyong)
@@ -41,12 +43,14 @@ func chushihua_json() {
 	}
 	for _, c := range shezhi.Mokuaiming {
 		Mokuaimings[c.Bianma] = c
+		Mokuaimingsarr = append(Mokuaimingsarr, c.Bianma)
 	}
+	sort.Strings(Mokuaimingsarr)
 }
 
 // 获取项目所在目录，这个方法无论在个系统都可以准确获取到项目目录
 func Getpath(mokuaiming string) string {
-	_, file, _, _ := runtime.Caller(1)
+	_, file, _, _ := runtime.Caller(zfzhi.Zhi.Shuzi1())
 	fumulu := zfzhi.Zhi.Dh() + zfzhi.Zhi.Dh() + zfzhi.Zhi.Xx()
 	apppath, _ := filepath.Abs(filepath.Dir(filepath.Join(file, fumulu)))
 	if mokuaiming != zf.Zfs.Gopath(true) {
