@@ -14,7 +14,6 @@ import (
 var Chushihuas = make(map[string]Tongyong)
 var Mokuaimings = make(map[string]Tongyong)
 var Mokuaimingsarr = []string{}
-var Mulus = make(map[string]Tongyong)
 var Jsonlies0 = make(map[string]Tongyong)
 var Jsonlies1 = make(map[string]Tongyong)
 var Jsonmojis = make(map[string]Tongyong)
@@ -26,9 +25,6 @@ func chushihua_json() {
 	shezhi := Shezhijson()
 	for _, c := range shezhi.Chushihua {
 		Chushihuas[c.Bianma] = c
-	}
-	for _, c := range shezhi.Mulu {
-		Mulus[c.Bianma] = c
 	}
 	for _, c := range shezhi.Jsonlie {
 		if Jsonliejibie(c.Bianma) == zfzhi.Zhi.Shuzi0() {

@@ -9,7 +9,6 @@ import (
 func TestChushihuas(t *testing.T) {
 	log.Println(gongju.Chushihuas["Jsonmojiming"].Zhi)
 	//log.Println(gongju.Mokuaimings["Hfxyonghu"].Bianma)
-	//log.Println(gongju.Mulus["Kongzhiqis"].Zhi)
 	//log.Println(gongju.Jsonlies["Shezhi"].Zhi)
 	//log.Println(gongju.Jsonmojis["Guilei"].Zhi)
 	//log.Println(gongju.Getgopath())
