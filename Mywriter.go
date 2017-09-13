@@ -1,9 +1,9 @@
 package gongju
 
 import (
-	"net/http"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/context"
+	"net/http"
 )
 
 type Mywriter struct {
