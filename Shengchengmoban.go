@@ -8,11 +8,11 @@ import (
 )
 
 func importsmoban(mkv string, buffer *bytes.Buffer) {
-	// \n import (\n
-	importstr := zfzhi.Zhi.Hhf() + zf.Zfs.Import(true) + zfzhi.Zhi.Kgf() +
-		zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Hhf()
-	buffer.WriteString(importstr)
-	//\n ) \n
+	buffer.WriteString(zf.Zfs.Import(true))
+	buffer.WriteString(zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Hhf())
+
+	//"xxxxxxxx"
+
 	buffer.WriteString(zfzhi.Zhi.Hhf() + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf())
 }
 func fangfamoban(bianma string, buffer *bytes.Buffer) {
