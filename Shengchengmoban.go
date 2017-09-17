@@ -12,6 +12,8 @@ func importsmoban(mkv string, buffer *bytes.Buffer) {
 	buffer.WriteString(zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Hhf())
 
 	//"xxxxxxxx"
+	nstr := zfzhi.Zhi.Syh() + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
+	buffer.WriteString(nstr)
 
 	buffer.WriteString(zfzhi.Zhi.Hhf() + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf())
 }
