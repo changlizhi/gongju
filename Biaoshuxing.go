@@ -9,6 +9,7 @@ import (
 	"reflect"
 	"regexp"
 	"strings"
+	"changliang/zw"
 )
 
 func Biaolies(mokuaiming string) (biaolie map[string]string, biao map[string]string, lie map[string]string) {
@@ -17,9 +18,9 @@ func Biaolies(mokuaiming string) (biaolie map[string]string, biao map[string]str
 	lie = make(map[string]string)
 	ffs := Pipeifangfa(
 		Getjichupath(),
-		zf.Zfs.Sjk(true)+mokuaiming,
-		zf.Zfs.Sjk(false)+mokuaiming,
-		zf.Zfs.Sjk(true)+mokuaiming,
+		zf.Zfs.Sjk(true) + mokuaiming,
+		zf.Zfs.Sjk(false) + mokuaiming,
+		zf.Zfs.Sjk(true) + mokuaiming,
 		zf.Zfs.Biaolie(false))
 	// "[A-Z][a-z]+"//正则表达式匹配驼峰命名的方法
 	repstr := zfzhi.Zhi.Zkhz() +
@@ -66,17 +67,29 @@ func Suoyoubiaojiegou(mokuaiming string) map[string][]string {
 	return ret
 }
 func Liechangdu(lieming string) int {
-	sjk := biaolie.Bl{}
+	a := biaolie.Bl{}
 	ffm := lieming + zf.Zfs.Changdu(true)
-	v := reflect.ValueOf(&sjk)
+	v := reflect.ValueOf(&a)
 	ret := v.MethodByName(ffm).Call(nil)[zfzhi.Zhi.Shuzi0()].Interface().(int)
 	return ret
 }
 
 func Lieleixing(lieming string) string {
-	sjk := biaolie.Bl{}
+	a := biaolie.Bl{}
 	ffm := lieming + zf.Zfs.Leixingzhi(true)
-	v := reflect.ValueOf(&sjk)
+	v := reflect.ValueOf(&a)
+	ret := v.MethodByName(ffm).Call(nil)[zfzhi.Zhi.Shuzi0()].Interface().(string)
+	if ret == zfzhi.Zhi.Kzf() {
+		log.Println("类型错误-----空")
+		return zfzhi.Zhi.Kzf()
+	}
+	return ret
+}
+
+func Liezhongwen(lieming string) string {
+	a := zw.Zw{}
+	ffm := lieming
+	v := reflect.ValueOf(&a)
 	ret := v.MethodByName(ffm).Call(nil)[zfzhi.Zhi.Shuzi0()].Interface().(string)
 	if ret == zfzhi.Zhi.Kzf() {
 		log.Println("类型错误-----空")
