@@ -24,3 +24,6 @@ func TestLieleixing(t *testing.T) {
 func TestLiechangdu(t *testing.T) {
 	log.Println(gongju.Liechangdu("Id"))
 }
+func TestLiezhongwen(t *testing.T) {
+	log.Println(gongju.Liezhongwen("Id"))
+}
