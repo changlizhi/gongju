@@ -19,10 +19,18 @@ import (
  * SnowFlake的优点是，整体上按照时间自增排序，并且整个分布式系统内不会产生ID碰撞(由数据中心ID和机器ID作区分)，并且效率较高，经测试，SnowFlake每秒能够产生26万ID左右。
  */
 func TestSnowflake(t *testing.T) {
-
+	w, err := gongju.NewIdWorker(3)
+	if err != nil {
+		log.Println("错误----------")
+		log.Println(err)
+	}
 	for a := 0; a < 10; a++ {
-		x := gongju.Shengchengzhujian(10, 10)
-		log.Println("x================",x)
+		id, err := w.NextId()
+		if err != nil {
+			log.Println("错误----------")
+			log.Println(err)
+		}
+		log.Println("id--------------", id)
 	}
 
 }
