@@ -1,7 +1,6 @@
 package gongju
 
 import (
-	"changliang/biaolie"
 	"changliang/zf"
 	"changliang/zfzhi"
 	"changliang/zw"
@@ -67,7 +66,7 @@ func Suoyoubiaojiegou(mokuaiming string) map[string][]string {
 	return ret
 }
 func Liechangdu(lieming string) int {
-	a := biaolie.Bl{}
+	a := zfzhi.Zfzhi{}
 	ffm := lieming + zf.Zfs.Changdu(true)
 	v := reflect.ValueOf(&a)
 	ret := v.MethodByName(ffm).Call(nil)[zfzhi.Zhi.Shuzi0()].Interface().(int)
@@ -75,7 +74,7 @@ func Liechangdu(lieming string) int {
 }
 
 func Lieleixing(lieming string) string {
-	a := biaolie.Bl{}
+	a := zfzhi.Zfzhi{}
 	ffm := lieming + zf.Zfs.Leixingzhi(true)
 	v := reflect.ValueOf(&a)
 	ret := v.MethodByName(ffm).Call(nil)[zfzhi.Zhi.Shuzi0()].Interface().(string)
