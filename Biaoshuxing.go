@@ -85,7 +85,7 @@ func Lieleixing(lieming string) string {
 	return ret
 }
 
-func Liezhongwen(lieming string) string {
+func Zhongwen(lieming string) string {
 	a := zw.Zw{}
 	ffm := lieming
 	v := reflect.ValueOf(&a)
