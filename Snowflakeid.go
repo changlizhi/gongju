@@ -8,24 +8,24 @@ import (
 )
 
 const (
-	twepoch = int64(1417937700000) // 默认起始的时间戳 1449473700000 。计算时，减去这个值
+	twepoch        = int64(1417937700000) // 默认起始的时间戳 1449473700000 。计算时，减去这个值
 	DistrictIdBits = uint(5)              //区域 所占用位置
-	NodeIdBits = uint(9)              //节点 所占位置
-	sequenceBits = uint(10)             //自增ID 所占用位置
+	NodeIdBits     = uint(9)              //节点 所占位置
+	sequenceBits   = uint(10)             //自增ID 所占用位置
 
 	/*
 	 * 1 符号位  |  39 时间戳                                     | 5 区域  |  9 节点       | 10 （毫秒内）自增ID
 	 * 0        |  0000000 00000000 00000000 00000000 00000000  | 00000  | 000000 000   |  000000 0000
 	 *
 	 */
-	maxNodeId = -1 ^ (-1 << NodeIdBits)     //节点 ID 最大范围
+	maxNodeId     = -1 ^ (-1 << NodeIdBits)     //节点 ID 最大范围
 	maxDistrictId = -1 ^ (-1 << DistrictIdBits) //最大区域范围
 
-	nodeIdShift = sequenceBits //左移次数
-	DistrictIdShift = sequenceBits + NodeIdBits
+	nodeIdShift        = sequenceBits //左移次数
+	DistrictIdShift    = sequenceBits + NodeIdBits
 	timestampLeftShift = sequenceBits + NodeIdBits + DistrictIdBits
-	sequenceMask = -1 ^ (-1 << sequenceBits)
-	maxNextIdsNum = 100 //单次获取ID的最大数量
+	sequenceMask       = -1 ^ (-1 << sequenceBits)
+	maxNextIdsNum      = 100 //单次获取ID的最大数量
 )
 
 type IdWorker struct {
@@ -100,7 +100,7 @@ func (id *IdWorker) nextid() (int64, error) {
 	timestamp := timeGen()
 	if timestamp < id.lastTimestamp {
 		//    fmt.Sprintf("clock is moving backwards.  Rejecting requests until %d.", id.lastTimestamp)
-		return 0, errors.New(fmt.Sprintf("Clock moved backwards.  Refusing to generate id for %d milliseconds", id.lastTimestamp - timestamp))
+		return 0, errors.New(fmt.Sprintf("Clock moved backwards.  Refusing to generate id for %d milliseconds", id.lastTimestamp-timestamp))
 	}
 	if id.lastTimestamp == timestamp {
 		id.sequence = (id.sequence + 1) & sequenceMask
