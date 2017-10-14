@@ -16,6 +16,8 @@ var Mokuaimings = make(map[string]Tongyong)
 var Mokuaimingsarr = []string{}
 var Jsonlies0 = make(map[string]Tongyong)
 var Jsonlies1 = make(map[string]Tongyong)
+var Jsonlies = make(map[string]Tongyong)
+var Jsonliesarr = []string{}
 var Jsonmojis = make(map[string]Tongyong)
 
 func init() {
@@ -33,7 +35,10 @@ func chushihua_json() {
 		if Jsonliejibie(c.Bianma) == zfzhi.Zhi.Shuzi1() {
 			Jsonlies1[c.Bianma] = c
 		}
+		Jsonlies[c.Bianma] = c
+		Jsonliesarr = append(Jsonliesarr, c.Bianma)
 	}
+	sort.Strings(Jsonliesarr)
 	for _, c := range shezhi.Jsonmoji {
 		Jsonmojis[c.Bianma] = c
 	}
