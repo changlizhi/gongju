@@ -87,7 +87,6 @@ func Lieleixing(lieming string) string {
 
 func Zhongwen(lieming string) string {
 	a := zw.Zw{}
-	log.Println(lieming)
 	v := reflect.ValueOf(&a)
 	ret := v.MethodByName(lieming).Call(nil)[zfzhi.Zhi.Shuzi0()].Interface().(string)
 	if ret == zfzhi.Zhi.Kzf() {
