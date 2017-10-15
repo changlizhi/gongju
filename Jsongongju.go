@@ -10,6 +10,7 @@ import (
 	"runtime"
 	"sort"
 	"jichu/peizhi"
+	"reflect"
 )
 
 var Chushihuas = make(map[string]Tongyong)
@@ -74,16 +75,6 @@ func Getwenjianmulu(mokuaiming string, mulu string, wenjian string, leixing stri
 	return path
 }
 
-// 获取jichu/peizhi.json的目录
-func Getjichujsonpath(bianma string) string {
-	path := Getwenjianmulu(zf.Zfs.Jichu(true), zf.Zfs.Peizhi(true), bianma, zf.Zfs.Json(true))
-	return path
-}
-
-func Shezhipath() string {
-	return Getjichujsonpath(zf.Zfs.Shezhi(false)) //yingyong
-}
-
 func Shezhijson() *Shezhi {
 	shezhi := Shezhi{}
 	obj := Fanshejiexi(
@@ -100,4 +91,22 @@ func Jiexi(path string, model interface{}) interface{} {
 	}
 	json.Unmarshal(bytes, &model)
 	return model
+}
+
+func Yigejsonlies(jsonming string) []string {
+	jl := peizhi.Jsonlie{}
+	rtjl := reflect.TypeOf(jl)
+	for i := zfzhi.Zhi.Shuzi0(); i < rtjl.NumField(); i++ {
+		rtjlf := rtjl.Field(i)
+		rtjft := rtjlf.Type
+		if rtjlf.Type.Name() == jsonming {
+			ret := []string{}
+			for j := zfzhi.Zhi.Shuzi0(); j < rtjft.NumField(); j++ {
+				rtjftf := rtjft.Field(j)
+				ret = append(ret, rtjftf.Name)
+			}
+			return ret
+		}
+	}
+	return []string{}
 }
