@@ -13,5 +13,6 @@ func TestFanshejiexi(t *testing.T) {
 		&shezhi,
 		peizhi.Pz{},
 	)
-	log.Println("fansheg--------", fansheg)
+	shezhiret := fansheg.(*gongju.Shezhi)
+	log.Println("fansheg--------", shezhiret)
 }
