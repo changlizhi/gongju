@@ -9,13 +9,12 @@ import (
 	"path/filepath"
 	"runtime"
 	"sort"
+	"jichu/peizhi"
 )
 
 var Chushihuas = make(map[string]Tongyong)
 var Mokuaimings = make(map[string]Tongyong)
 var Mokuaimingsarr = []string{}
-var Jsonlies0 = make(map[string]Tongyong)
-var Jsonlies1 = make(map[string]Tongyong)
 var Jsonlies = make(map[string]Tongyong)
 var Jsonliesarr = []string{}
 var Jsonmojis = make(map[string]Tongyong)
@@ -29,12 +28,6 @@ func chushihua_json() {
 		Chushihuas[c.Bianma] = c
 	}
 	for _, c := range shezhi.Jsonlie {
-		if Jsonliejibie(c.Bianma) == zfzhi.Zhi.Shuzi0() {
-			Jsonlies0[c.Bianma] = c
-		}
-		if Jsonliejibie(c.Bianma) == zfzhi.Zhi.Shuzi1() {
-			Jsonlies1[c.Bianma] = c
-		}
 		Jsonlies[c.Bianma] = c
 		Jsonliesarr = append(Jsonliesarr, c.Bianma)
 	}
@@ -93,7 +86,10 @@ func Shezhipath() string {
 
 func Shezhijson() *Shezhi {
 	shezhi := Shezhi{}
-	obj := Jiexi(Shezhipath(), &shezhi)
+	obj := Fanshejiexi(
+		&shezhi,
+		peizhi.Pz{},
+	)
 	return obj.(*Shezhi)
 }
 
