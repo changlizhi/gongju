@@ -2,25 +2,16 @@ package tests
 
 import (
 	"log"
-	"mhsydata/chushihuas"
-	"mhsydata/zdguojihua"
 	"testing"
 	"gongju"
+	"jichu/peizhi"
 )
 
 func TestFanshejiexi(t *testing.T) {
-	//shezhi := chushihuas.Shezhi{}
-	//fanshes := gongju.Fanshejiexi(
-	//	&shezhi,
-	//	zdpeizhi.Pz{},
-	//)
-	//shezhifh := fanshes.(*chushihuas.Shezhi)
-	//log.Println("shezhifh=========", shezhifh)
-
-	guojihua := chushihuas.Guojihua{}
+	shezhi := gongju.Shezhi{}
 	fansheg := gongju.Fanshejiexi(
-		&guojihua,
-		zdguojihua.Gjh{},
+		&shezhi,
+		peizhi.Pz{},
 	)
 	log.Println("fansheg--------", fansheg)
 }
