@@ -4,7 +4,7 @@ import (
 	"log"
 	"testing"
 	"gongju"
-	"jichu/peizhi"
+	"gongju/peizhi"
 )
 
 func TestFanshejiexi(t *testing.T) {
