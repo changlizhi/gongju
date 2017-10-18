@@ -55,12 +55,8 @@ func Biaolies(mokuaiming string) (biaolie map[string]string, biao map[string]str
 	return
 }
 
-func Fanshesuoyoubiaojiegou(mokuaiming string) map[string][]string {
-	return Fanshebiaojiegou(mokuaiming)
-}
-
 func Fanshebiao(mokuaiming string, mingcheng string) []string {
-	biaojiegou := Fanshesuoyoubiaojiegou(mokuaiming)
+	biaojiegou := Fanshebiaojiegou(mokuaiming)
 	return biaojiegou[mingcheng]
 }
 

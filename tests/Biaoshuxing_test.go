@@ -12,9 +12,6 @@ func TestBiaolie(t *testing.T) {
 	log.Println(gongju.Biaolies(zf.Zfs.Mhsyyonghu(true)))
 }
 
-func TestBiaojiegou(t *testing.T) {
-	log.Println(gongju.Fanshesuoyoubiaojiegou(zf.Zfs.Mhsydata(true)))
-}
 func TestBiao(t *testing.T) {
 	log.Println(gongju.Fanshebiao(zf.Zfs.Mhsydata(true), "Cujinfangan"))
 }
