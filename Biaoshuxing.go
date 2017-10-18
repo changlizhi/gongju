@@ -11,15 +11,30 @@ import (
 	"strings"
 )
 
+func Fanshebiaolies(mokuaiming string) (biaolie map[string]string, biao map[string]string, lie map[string]string) {
+	biaolie = make(map[string]string)
+	biao = make(map[string]string)
+	lie = make(map[string]string)
+	bjg := Fanshebiaojiegou(mokuaiming)
+	for k, vs := range bjg {
+		for _, v := range vs {
+			biaolie[k + v] = strings.ToLower(k + v)
+			biao[k] = strings.ToLower(k)
+			lie[v] = strings.ToLower(v)
+		}
+	}
+	return
+}
+
 func Biaolies(mokuaiming string) (biaolie map[string]string, biao map[string]string, lie map[string]string) {
 	biaolie = make(map[string]string)
 	biao = make(map[string]string)
 	lie = make(map[string]string)
 	ffs := Pipeifangfa(
 		Getjichupath(),
-		zf.Zfs.Sjk(true)+mokuaiming,
-		zf.Zfs.Sjk(false)+mokuaiming,
-		zf.Zfs.Sjk(true)+mokuaiming,
+		zf.Zfs.Sjk(true) + mokuaiming,
+		zf.Zfs.Sjk(false) + mokuaiming,
+		zf.Zfs.Sjk(true) + mokuaiming,
 		zf.Zfs.Biaolie(false))
 	// "[A-Z][a-z]+"//正则表达式匹配驼峰命名的方法
 	repstr := zfzhi.Zhi.Zkhz() +
@@ -40,6 +55,19 @@ func Biaolies(mokuaiming string) (biaolie map[string]string, biao map[string]str
 	return
 }
 
+func Fanshesuoyoubiaojiegou(mokuaiming string) map[string][]string {
+	return Fanshebiaojiegou(mokuaiming)
+}
+
+func Fanshebiao(mokuaiming string, mingcheng string) []string {
+	biaojiegou := Fanshesuoyoubiaojiegou(mokuaiming)
+	return biaojiegou[mingcheng]
+}
+
+func Biao(mokuaiming string, mingcheng string) []string {
+	biaojiegou := Suoyoubiaojiegou(mokuaiming)
+	return biaojiegou[mingcheng]
+}
 func Suoyoubiaojiegou(mokuaiming string) map[string][]string {
 	ret := make(map[string][]string)
 	// "[A-Z][a-z]+"//正则表达式匹配驼峰命名的方法
@@ -94,11 +122,6 @@ func Zhongwen(lieming string) string {
 		return zfzhi.Zhi.Kzf()
 	}
 	return ret
-}
-
-func Biao(mokuaiming string, mingcheng string) []string {
-	biaojiegou := Suoyoubiaojiegou(mokuaiming)
-	return biaojiegou[mingcheng]
 }
 
 func Pipeifangfa(pathfrom string, canshu string, canshuleixing string, muluming string, wenjianming string) []string {
