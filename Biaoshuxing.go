@@ -17,7 +17,7 @@ func Fanshebiaolies(mokuaiming string) (biaolie map[string]string, biao map[stri
 	bjg := Fanshebiaojiegou(mokuaiming)
 	for k, vs := range bjg {
 		for _, v := range vs {
-			biaolie[k+v] = strings.ToLower(k + v)
+			biaolie[k + v] = strings.ToLower(k + v)
 			biao[k] = strings.ToLower(k)
 			lie[v] = strings.ToLower(v)
 		}
@@ -76,18 +76,22 @@ func Fanshebiaojiegou(mokuaiming string) map[string][]string {
 	//循环所有Mokuaiming里的字段类型如果匹配了参数则成功
 	m := peizhi.Mokuaiming{}
 	rvm := reflect.ValueOf(m)
+	//rtm := reflect.TypeOf(m)
 	ret := make(map[string][]string)
 
 	for i := zfzhi.Zhi.Shuzi0(); i < rvm.NumField(); i++ {
 		rvmf := rvm.Field(i)
+		//rtmfn, _ := rtm.FieldByName(rvmf.Type().Name() + zf.Zfs.Mk(true))
 		rvmftn := strings.ToLower(rvmf.Type().Name())
 		if rvmftn == mokuaiming {
 			for j := zfzhi.Zhi.Shuzi0(); j < rvmf.NumField(); j++ {
 				rvmff := rvmf.Field(j)
 				rvmffn := strings.Split(rvmff.Type().String(), zfzhi.Zhi.Dh())[zfzhi.Zhi.Shuzi1()]
+				//rtmff, _ := rtmfn.Type.FieldByName(zf.Zfs.Dt(false) + strings.ToLower(rvmffn))
 				vs := Fanshejichulie()
 				for k := zfzhi.Zhi.Shuzi0(); k < rvmff.NumMethod(); k++ {
 					rvmffm := rvmff.Method(k)
+					//log.Print("rtmff.Type.Method(k).Name------", rtmff.Type.Method(k).Name)
 					val := rvmffm.Call(nil)[zfzhi.Zhi.Shuzi0()].String()
 					vs = append(vs, val)
 				}
