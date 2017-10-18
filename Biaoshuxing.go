@@ -61,7 +61,6 @@ func Fanshesuoyoubiaojiegou(mokuaiming string) map[string][]string {
 
 func Fanshebiao(mokuaiming string, mingcheng string) []string {
 	biaojiegou := Fanshesuoyoubiaojiegou(mokuaiming)
-	log.Println("biaojiegou-------mingcheng",mingcheng)
 	return biaojiegou[mingcheng]
 }
 

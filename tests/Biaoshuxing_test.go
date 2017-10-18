@@ -17,7 +17,7 @@ func TestBiaojiegou(t *testing.T) {
 }
 func TestBiao(t *testing.T) {
 	log.Println(gongju.Biao(zf.Zfs.Mhsydata(true), "Juese"))
-	log.Println(gongju.Fanshebiao(zf.Zfs.Mhsydata(true), "Juese"))
+	log.Println(gongju.Fanshebiao(zf.Zfs.Mhsydata(true), "Cujinfangan"))
 }
 func TestLieleixing(t *testing.T) {
 	log.Println(gongju.Lieleixing("Id"))
