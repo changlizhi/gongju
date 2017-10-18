@@ -13,7 +13,7 @@ func TestBiaolie(t *testing.T) {
 }
 
 func TestBiaojiegou(t *testing.T) {
-	log.Println(gongju.Suoyoubiaojiegou(zf.Zfs.Hfxyonghu(true)))
+	log.Println(gongju.Fanshesuoyoubiaojiegou(zf.Zfs.Mhsydata(true)))
 }
 func TestBiao(t *testing.T) {
 	log.Println(gongju.Fanshebiao(zf.Zfs.Mhsydata(true), "Cujinfangan"))

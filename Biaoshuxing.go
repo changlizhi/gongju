@@ -64,31 +64,6 @@ func Fanshebiao(mokuaiming string, mingcheng string) []string {
 	return biaojiegou[mingcheng]
 }
 
-func Suoyoubiaojiegou(mokuaiming string) map[string][]string {
-	ret := make(map[string][]string)
-	// "[A-Z][a-z]+"//正则表达式匹配驼峰命名的方法
-	repstr := zfzhi.Zhi.Zkhz() +
-		zf.Zfs.A(false) + zfzhi.Zhi.Jian() + zf.Zfs.Z(false) +
-		zfzhi.Zhi.Zkhy() +
-		zfzhi.Zhi.Zkhz() +
-		zf.Zfs.A(true) + zfzhi.Zhi.Jian() + zf.Zfs.Z(true) +
-		zfzhi.Zhi.Zkhy() +
-		zfzhi.Zhi.Jia()
-	rep, _ := regexp.CompilePOSIX(repstr)
-
-	biaolie, biao, _ := Biaolies(mokuaiming)
-	for bk, _ := range biao {
-		lies := []string{}
-		for blk, _ := range biaolie {
-			fp := rep.FindAllString(blk, zfzhi.Zhi.Shuzifu1())
-			if fp[zfzhi.Zhi.Shuzi0()] == bk {
-				lies = append(lies, fp[zfzhi.Zhi.Shuzi1()])
-			}
-		}
-		ret[bk] = lies
-	}
-	return ret
-}
 func Liechangdu(lieming string) int {
 	a := zfzhi.Zfzhi{}
 	ffm := lieming + zf.Zfs.Changdu(true)
