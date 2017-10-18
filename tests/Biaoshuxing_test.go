@@ -7,13 +7,8 @@ import (
 	"testing"
 )
 
-func TestBiaolie(t *testing.T) {
-	log.Println(gongju.Biaolies(zf.Zfs.Hfxyonghu(true)))
-	log.Println(gongju.Biaolies(zf.Zfs.Mhsyyonghu(true)))
-}
 func TestFanshebiaolie(t *testing.T) {
 	log.Println(gongju.Fanshebiaolies(zf.Zfs.Mhsydata(true)))
-	log.Println(gongju.Biaolies(zf.Zfs.Mhsydata(true)))
 }
 
 func TestBiao(t *testing.T) {
