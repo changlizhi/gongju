@@ -60,7 +60,7 @@ func Fanshejiexi(modelret interface{}, model interface{}) interface{} {
 		instr := bufferin.String()
 		instrnew := instr[zfzhi.Zhi.Shuzi0():(len(instr) - zfzhi.Zhi.Shuzi1())]
 		bufferzhong.WriteString(instrnew)
-		bufferzhong.WriteString(zfzhi.Zhi.Zkhy()+zfzhi.Zhi.Dou())
+		bufferzhong.WriteString(zfzhi.Zhi.Zkhy() + zfzhi.Zhi.Dou())
 	}
 	zhongstr := bufferzhong.String()
 	zhongstrnew := zhongstr[zfzhi.Zhi.Shuzi0():(len(zhongstr) - zfzhi.Zhi.Shuzi1())]

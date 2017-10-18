@@ -4,13 +4,13 @@ import (
 	"changliang/zf"
 	"changliang/zfzhi"
 	"encoding/json"
+	"gongju/peizhi"
 	"io/ioutil"
 	"log"
 	"path/filepath"
+	"reflect"
 	"runtime"
 	"sort"
-	"gongju/peizhi"
-	"reflect"
 )
 
 var Chushihuas = make(map[string]Tongyong)
@@ -59,6 +59,7 @@ func Getgopath() string {
 func Getjichupath() string {
 	return Getpath(zf.Zfs.Jichu(true))
 }
+
 // 获取文件目录，直接返回文件目录结构，不论文件是否存在
 func Getwenjianmulu(mokuaiming string, mulu string, wenjian string, leixing string) string {
 	path := Getpath(mokuaiming) + // apppath
