@@ -9,7 +9,7 @@ import (
 
 func Pinjieziduan(mokuai string, bianma string, buffer *bytes.Buffer) {
 
-	for _, lk := range Biao(mokuai, bianma) {
+	for _, lk := range Fanshebiao(mokuai, bianma) {
 		buffer.WriteString(lk + zfzhi.Zhi.Mh())
 		zhi := shengchengzhi(lk, Lieleixing(lk))
 		buffer.WriteString(zhi + zfzhi.Zhi.Dou() + zfzhi.Zhi.Hhf())

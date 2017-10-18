@@ -64,10 +64,6 @@ func Fanshebiao(mokuaiming string, mingcheng string) []string {
 	return biaojiegou[mingcheng]
 }
 
-func Biao(mokuaiming string, mingcheng string) []string {
-	biaojiegou := Suoyoubiaojiegou(mokuaiming)
-	return biaojiegou[mingcheng]
-}
 func Suoyoubiaojiegou(mokuaiming string) map[string][]string {
 	ret := make(map[string][]string)
 	// "[A-Z][a-z]+"//正则表达式匹配驼峰命名的方法
