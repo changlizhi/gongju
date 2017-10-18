@@ -25,7 +25,7 @@ func Shengchengmoban() {
 	mks := Mokuaimings
 	for _, mkvo := range mkarr {
 		mkv := mks[mkvo].Zhi
-		_, biaos, _ := Biaolies(mkv)
+		_, biaos, _ := Fanshebiaolies(mkv)
 		for bk, _ := range biaos {
 			buffer := &bytes.Buffer{}
 			buffer.WriteString(mkv)
