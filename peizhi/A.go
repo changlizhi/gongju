@@ -1,5 +1,7 @@
 package peizhi
 
+import "jichu/sjkmhsydata"
+
 type Pz struct {
 	Cshpz *Chushihua
 	Mkmpz *Mokuaiming
@@ -11,7 +13,9 @@ type Chushihua struct{}
 
 var Cshs = &Chushihua{}
 
-type Mokuaiming struct{}
+type Mokuaiming struct {
+	Mhsydatamk sjkmhsydata.Mhsydata
+}
 
 var Mkms = &Mokuaiming{}
 
