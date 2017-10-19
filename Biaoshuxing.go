@@ -47,7 +47,7 @@ func Biaojiziduan(ziduan string) string {
 	return ret
 }
 func Biaojibiao(biao string) string {
-	sjk := Ziduanbiaoji{}
+	sjk := Biaobiaoji{}
 	ffm := biao + zf.Zfs.Biaoji(true)
 	v := reflect.ValueOf(&sjk)
 	ret := v.MethodByName(ffm).Call(nil)[zfzhi.Zhi.Shuzi0()].Interface().(string)
