@@ -7,6 +7,7 @@ import (
 
 type Jicuziduan struct{}
 type Ziduanbiaoji struct{}
+type Biaobiaoji struct{}
 
 func (jczd *Jicuziduan) Id() string {
 	return zf.Zfs.Id(false)
@@ -68,3 +69,98 @@ func (zdbj *Ziduanbiaoji) Chuangjianriqibiaoji() string {
 func (zdbj *Ziduanbiaoji) Caozuoriqibiaoji() string {
 	return zdbj.Chuangjianriqibiaoji()
 }
+
+func (bbj *Biaobiaoji) Juesebiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Dtziyuanbiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Juesequanxianbiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Jueseziyuanbiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Quanxianbiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Xinxibiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Xinxijuesebiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Yanzhengbiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Yanzhengleixingbiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Zhanghaojuesebiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Ziyuanbiaoji() string {
+	return zf.Zfs.Yemianlianjie(false)
+}
+func (bbj *Biaobiaoji) Shebeibiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Yinpinbiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Yinpinbofangbiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Yinpinxiazaibiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Xiangmubiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Xiangmuzubiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Xiangmuzuxiangmubiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Shijianbiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Zhanghaoshijianbiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Zhanghaobiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Zidianbiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Yonghubiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Yonghujibingbiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Wenzhangbiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Liuyanbiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Fuwufankuibiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Xiangmushujubiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Xiangmuzushijianbiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Jibingbiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+func (bbj *Biaobiaoji) Cujinfanganbiaoji() string {
+	return zf.Zfs.Yiban(false)
+}
+
