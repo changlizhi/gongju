@@ -38,9 +38,17 @@ func Liechangdu(lieming string) int {
 	return ret
 }
 
-func Biaojishuoming(ziduan string) string {
+func Biaojiziduan(ziduan string) string {
 	sjk := Ziduanbiaoji{}
 	ffm := ziduan + zf.Zfs.Biaoji(true)
+	v := reflect.ValueOf(&sjk)
+	ret := v.MethodByName(ffm).Call(nil)[zfzhi.Zhi.Shuzi0()].Interface().(string)
+
+	return ret
+}
+func Biaojibiao(biao string) string {
+	sjk := Ziduanbiaoji{}
+	ffm := biao + zf.Zfs.Biaoji(true)
 	v := reflect.ValueOf(&sjk)
 	ret := v.MethodByName(ffm).Call(nil)[zfzhi.Zhi.Shuzi0()].Interface().(string)
 
