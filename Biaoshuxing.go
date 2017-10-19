@@ -17,7 +17,7 @@ func Fanshebiaolies(mokuaiming string) (biaolie map[string]string, biao map[stri
 	bjg := Fanshebiaojiegou(mokuaiming)
 	for k, vs := range bjg {
 		for _, v := range vs {
-			biaolie[k+v] = strings.ToLower(k + v)
+			biaolie[k + v] = strings.ToLower(k + v)
 			biao[k] = strings.ToLower(k)
 			lie[v] = strings.ToLower(v)
 		}
@@ -35,6 +35,15 @@ func Liechangdu(lieming string) int {
 	ffm := lieming + zf.Zfs.Changdu(true)
 	v := reflect.ValueOf(&a)
 	ret := v.MethodByName(ffm).Call(nil)[zfzhi.Zhi.Shuzi0()].Interface().(int)
+	return ret
+}
+
+func Biaojishuoming(ziduan string) string {
+	sjk := Ziduanbiaoji{}
+	ffm := ziduan + zf.Zfs.Biaoji(true)
+	v := reflect.ValueOf(&sjk)
+	ret := v.MethodByName(ffm).Call(nil)[zfzhi.Zhi.Shuzi0()].Interface().(string)
+
 	return ret
 }
 

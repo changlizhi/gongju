@@ -23,3 +23,6 @@ func TestLiechangdu(t *testing.T) {
 func TestZhongwen(t *testing.T) {
 	log.Println(gongju.Zhongwen("Id"))
 }
+func TestJichuziduanbiaoji(t *testing.T) {
+	log.Println(gongju.Ziduanbiaoji("Id"))
+}
