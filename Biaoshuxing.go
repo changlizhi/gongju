@@ -4,10 +4,10 @@ import (
 	"changliang/zf"
 	"changliang/zfzhi"
 	"changliang/zw"
+	"gongju/peizhi"
 	"log"
 	"reflect"
 	"strings"
-	"gongju/peizhi"
 )
 
 func Fanshebiaolies(mokuaiming string) (biaolie map[string]string, biao map[string]string, lie map[string]string) {
@@ -17,7 +17,7 @@ func Fanshebiaolies(mokuaiming string) (biaolie map[string]string, biao map[stri
 	bjg := Fanshebiaojiegou(mokuaiming)
 	for k, vs := range bjg {
 		for _, v := range vs {
-			biaolie[k + v] = strings.ToLower(k + v)
+			biaolie[k+v] = strings.ToLower(k + v)
 			biao[k] = strings.ToLower(k)
 			lie[v] = strings.ToLower(v)
 		}
