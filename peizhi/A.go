@@ -1,6 +1,6 @@
 package peizhi
 
-import "jichu/sjkmhsydata"
+import "gongju/sjkmhsydata"
 
 type Pz struct {
 	Cshpz *Chushihua

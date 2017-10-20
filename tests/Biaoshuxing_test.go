@@ -24,5 +24,5 @@ func TestZhongwen(t *testing.T) {
 	log.Println(gongju.Zhongwen("Id"))
 }
 func TestJichuziduanbiaoji(t *testing.T) {
-	log.Println(gongju.Ziduanbiaoji("Id"))
+	log.Println(gongju.Biaojiziduan("Id"))
 }
