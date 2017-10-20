@@ -14,3 +14,6 @@ func (zh *Zhanghao) Zhi() string {
 func (zh *Zhanghao) Weiyibianma() string {
 	return zf.Zfs.Weiyibianma(false)
 }
+func (zh *Zhanghao) Bianhao() string {
+	return zf.Zfs.Bianhao(false)
+}
