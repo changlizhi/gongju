@@ -79,7 +79,7 @@ func Zhongwen(lieming string) string {
 }
 
 func Fanshejichulie() []string {
-	m := &Jicuziduan{}
+	m := &Jichuziduan{}
 	ret := []string{}
 	rvm := reflect.ValueOf(m)
 	for i := zfzhi.Zhi.Shuzi0(); i < rvm.NumMethod(); i++ {

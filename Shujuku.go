@@ -5,29 +5,29 @@ import (
 	"changliang/zfzhi"
 )
 
-type Jicuziduan struct{}
+type Jichuziduan struct{}
 type Ziduanbiaoji struct{}
 type Biaobiaoji struct{}
 
-func (jczd *Jicuziduan) Id() string {
+func (jczd *Jichuziduan) Id() string {
 	return zf.Zfs.Id(false)
 }
-func (jczd *Jicuziduan) Bianma() string {
+func (jczd *Jichuziduan) Bianma() string {
 	return zf.Zfs.Bianma(false)
 }
-func (jczd *Jicuziduan) Youxiaoxing() string {
+func (jczd *Jichuziduan) Youxiaoxing() string {
 	return zf.Zfs.Youxiaoxing(false)
 }
-func (jczd *Jicuziduan) Caozuoren() string {
+func (jczd *Jichuziduan) Caozuoren() string {
 	return zf.Zfs.Caozuoren(false)
 }
-func (jczd *Jicuziduan) Biaoji() string {
+func (jczd *Jichuziduan) Biaoji() string {
 	return zf.Zfs.Biaoji(false)
 }
-func (jczd *Jicuziduan) Chuangjianriqi() string {
+func (jczd *Jichuziduan) Chuangjianriqi() string {
 	return zf.Zfs.Chuangjianriqi(false)
 }
-func (jczd *Jicuziduan) Caozuoriqi() string {
+func (jczd *Jichuziduan) Caozuoriqi() string {
 	return zf.Zfs.Caozuoriqi(false)
 }
 
