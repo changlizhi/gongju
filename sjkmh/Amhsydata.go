@@ -3,355 +3,864 @@ package sjkmh
 import "changliang/zf"
 
 type Mhsydata struct {
-	Juesemh                   *Juese
-	Yinpinmh                  *Yinpin
-	Tizhengzhibiaomh          *Tizhengzhibiao
-	Shebeimh                  *Shebei
-	Ziyuanmh                  *Ziyuan
-	Zhanghaomh                *Zhanghao
-	Yonghumh                  *Yonghu
-	Tizhengzhibiaozumh        *Tizhengzhibiaozu
-	Yinpinxiazaimh            *Yinpinxiazai
-	Tizhengzhibiaozushijianmh *Tizhengzhibiaozushijian
-	Jianceshujumh             *Jianceshuju
-	Fuwufankuimh              *Fuwufankui
-	Zhanghaoshijianmh         *Zhanghaoshijian
-	Yinpinbofangmh            *Yinpinbofang
-	Zidianmh                  *Zidian
-	Zhanghaojuesemh           *Zhanghaojuese
-	Liuyanmh                  *Liuyan
-	Jibingmh                  *Jibing
-	Tizhengzhibiaozuzhibiaomh *Tizhengzhibiaozuzhibiao
-	Shijianmh                 *Shijian
-	Wenzhangmh                *Wenzhang
-	Jueseziyuanmh             *Jueseziyuan
+	Jueseshujumh                    *Jueseshuju
+	Juesejiegoumh                   *Juesejiegou
+	Yinpinshujumh                   *Yinpinshuju
+	Yinpinjiegoumh                  *Yinpinjiegou
+	Tizhengzhibiaoshujumh           *Tizhengzhibiaoshuju
+	Tizhengzhibiaojiegoumh          *Tizhengzhibiaojiegou
+	Shebeishujumh                   *Shebeishuju
+	Shebeijiegoumh                  *Shebeijiegou
+	Ziyuanshujumh                   *Ziyuanshuju
+	Ziyuanjiegoumh                  *Ziyuanjiegou
+	Zhanghaoshujumh                 *Zhanghaoshuju
+	Zhanghaojiegoumh                *Zhanghaojiegou
+	Yonghushujumh                   *Yonghushuju
+	Yonghujiegoumh                  *Yonghujiegou
+	Tizhengzhibiaozushujumh         *Tizhengzhibiaozushuju
+	Tizhengzhibiaozujiegoumh        *Tizhengzhibiaozujiegou
+	Yinpinxiazaishujumh             *Yinpinxiazaishuju
+	Yinpinxiazaijiegoumh            *Yinpinxiazaijiegou
+	Tizhengzhibiaozushijianshujumh  *Tizhengzhibiaozushijianshuju
+	Tizhengzhibiaozushijianjiegoumh *Tizhengzhibiaozushijianjiegou
+	Jiancefenxishujumh              *Jiancefenxishuju
+	Jiancefenxijiegoumh             *Jiancefenxijiegou
+	Fuwufankuishujumh               *Fuwufankuishuju
+	Fuwufankuijiegoumh              *Fuwufankuijiegou
+	Zhanghaoshijianshujumh          *Zhanghaoshijianshuju
+	Zhanghaoshijianjiegoumh         *Zhanghaoshijianjiegou
+	Yinpinbofangshujumh             *Yinpinbofangshuju
+	Yinpinbofangjiegoumh            *Yinpinbofangjiegou
+	Zidianshujumh                   *Zidianshuju
+	Zidianjiegoumh                  *Zidianjiegou
+	Zhanghaojueseshujumh            *Zhanghaojueseshuju
+	Zhanghaojuesejiegoumh           *Zhanghaojuesejiegou
+	Liuyanshujumh                   *Liuyanshuju
+	Liuyanjiegoumh                  *Liuyanjiegou
+	Jibingshujumh                   *Jibingshuju
+	Jibingjiegoumh                  *Jibingjiegou
+	Tizhengzhibiaozuzhibiaoshujumh  *Tizhengzhibiaozuzhibiaoshuju
+	Tizhengzhibiaozuzhibiaojiegoumh *Tizhengzhibiaozuzhibiaojiegou
+	Shijianshujumh                  *Shijianshuju
+	Shijianjiegoumh                 *Shijianjiegou
+	Wenzhangshujumh                 *Wenzhangshuju
+	Wenzhangjiegoumh                *Wenzhangjiegou
+	Jueseziyuanshujumh              *Jueseziyuanshuju
+	Jueseziyuanjiegoumh             *Jueseziyuanjiegou
 }
-type Yinpin struct{}
+type Jueseshuju struct{}
+type Yinpinshuju struct{}
+type Tizhengzhibiaoshuju struct{}
+type Shebeishuju struct{}
+type Ziyuanshuju struct{}
+type Zhanghaoshuju struct{}
+type Yonghushuju struct{}
+type Tizhengzhibiaozushuju struct{}
+type Yinpinxiazaishuju struct{}
+type Tizhengzhibiaozushijianshuju struct{}
+type Jiancefenxishuju struct{}
+type Fuwufankuishuju struct{}
+type Zhanghaoshijianshuju struct{}
+type Yinpinbofangshuju struct{}
+type Zidianshuju struct{}
+type Zhanghaojueseshuju struct{}
+type Liuyanshuju struct{}
+type Jibingshuju struct{}
+type Tizhengzhibiaozuzhibiaoshuju struct{}
+type Shijianshuju struct{}
+type Wenzhangshuju struct{}
+type Jueseziyuanshuju struct{}
 
-func (yinpin *Yinpin) Zhutibianma() string {
+type Juesejiegou struct{}
+type Yinpinjiegou struct{}
+type Tizhengzhibiaojiegou struct{}
+type Shebeijiegou struct{}
+type Ziyuanjiegou struct{}
+
+type Zhanghaojiegou struct{}
+
+type Yonghujiegou struct{}
+
+type Tizhengzhibiaozujiegou struct{}
+
+type Yinpinxiazaijiegou struct{}
+
+type Tizhengzhibiaozushijianjiegou struct{}
+
+type Jiancefenxijiegou struct{}
+
+type Fuwufankuijiegou struct{}
+
+type Zhanghaoshijianjiegou struct{}
+
+type Yinpinbofangjiegou struct{}
+
+type Zidianjiegou struct{}
+
+type Zhanghaojuesejiegou struct{}
+
+type Liuyanjiegou struct{}
+
+type Jibingjiegou struct{}
+
+type Tizhengzhibiaozuzhibiaojiegou struct{}
+
+type Shijianjiegou struct{}
+
+type Wenzhangjiegou struct{}
+
+type Jueseziyuanjiegou struct{}
+
+func (jueseshuju *Jueseshuju) Zhutibianma() string {
 	return zf.Zfs.Zhutibianma(false)
 }
-func (yinpin *Yinpin) Zhi() string {
+func (jueseshuju *Jueseshuju) Zhi() string {
 	return zf.Zfs.Zhi(false)
 }
-func (yinpin *Yinpin) Ziduanbianma() string {
+func (jueseshuju *Jueseshuju) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
 }
-func (yinpin *Yinpin) Id() string {
+func (jueseshuju *Jueseshuju) Id() string {
+	return zf.Zfs.Id(false)
+}
+func (yinpinshuju *Yinpinshuju) Zhutibianma() string {
+	return zf.Zfs.Zhutibianma(false)
+}
+func (yinpinshuju *Yinpinshuju) Zhi() string {
+	return zf.Zfs.Zhi(false)
+}
+func (yinpinshuju *Yinpinshuju) Ziduanbianma() string {
+	return zf.Zfs.Ziduanbianma(false)
+}
+func (yinpinshuju *Yinpinshuju) Id() string {
+	return zf.Zfs.Id(false)
+}
+func (tizhengzhibiaoshuju *Tizhengzhibiaoshuju) Zhutibianma() string {
+	return zf.Zfs.Zhutibianma(false)
+}
+func (tizhengzhibiaoshuju *Tizhengzhibiaoshuju) Zhi() string {
+	return zf.Zfs.Zhi(false)
+}
+func (tizhengzhibiaoshuju *Tizhengzhibiaoshuju) Ziduanbianma() string {
+	return zf.Zfs.Ziduanbianma(false)
+}
+func (tizhengzhibiaoshuju *Tizhengzhibiaoshuju) Id() string {
+	return zf.Zfs.Id(false)
+}
+func (shebeishuju *Shebeishuju) Zhutibianma() string {
+	return zf.Zfs.Zhutibianma(false)
+}
+func (shebeishuju *Shebeishuju) Zhi() string {
+	return zf.Zfs.Zhi(false)
+}
+func (shebeishuju *Shebeishuju) Ziduanbianma() string {
+	return zf.Zfs.Ziduanbianma(false)
+}
+func (shebeishuju *Shebeishuju) Id() string {
+	return zf.Zfs.Id(false)
+}
+func (ziyuanshuju *Ziyuanshuju) Zhutibianma() string {
+	return zf.Zfs.Zhutibianma(false)
+}
+func (ziyuanshuju *Ziyuanshuju) Zhi() string {
+	return zf.Zfs.Zhi(false)
+}
+func (ziyuanshuju *Ziyuanshuju) Ziduanbianma() string {
+	return zf.Zfs.Ziduanbianma(false)
+}
+func (ziyuanshuju *Ziyuanshuju) Id() string {
+	return zf.Zfs.Id(false)
+}
+func (zhanghaoshuju *Zhanghaoshuju) Zhutibianma() string {
+	return zf.Zfs.Zhutibianma(false)
+}
+func (zhanghaoshuju *Zhanghaoshuju) Zhi() string {
+	return zf.Zfs.Zhi(false)
+}
+func (zhanghaoshuju *Zhanghaoshuju) Ziduanbianma() string {
+	return zf.Zfs.Ziduanbianma(false)
+}
+func (zhanghaoshuju *Zhanghaoshuju) Id() string {
+	return zf.Zfs.Id(false)
+}
+func (yonghushuju *Yonghushuju) Zhutibianma() string {
+	return zf.Zfs.Zhutibianma(false)
+}
+func (yonghushuju *Yonghushuju) Zhi() string {
+	return zf.Zfs.Zhi(false)
+}
+func (yonghushuju *Yonghushuju) Ziduanbianma() string {
+	return zf.Zfs.Ziduanbianma(false)
+}
+func (yonghushuju *Yonghushuju) Id() string {
+	return zf.Zfs.Id(false)
+}
+func (tizhengzhibiaozushuju *Tizhengzhibiaozushuju) Zhutibianma() string {
+	return zf.Zfs.Zhutibianma(false)
+}
+func (tizhengzhibiaozushuju *Tizhengzhibiaozushuju) Zhi() string {
+	return zf.Zfs.Zhi(false)
+}
+func (tizhengzhibiaozushuju *Tizhengzhibiaozushuju) Ziduanbianma() string {
+	return zf.Zfs.Ziduanbianma(false)
+}
+func (tizhengzhibiaozushuju *Tizhengzhibiaozushuju) Id() string {
+	return zf.Zfs.Id(false)
+}
+func (yinpinxiazaishuju *Yinpinxiazaishuju) Zhutibianma() string {
+	return zf.Zfs.Zhutibianma(false)
+}
+func (yinpinxiazaishuju *Yinpinxiazaishuju) Zhi() string {
+	return zf.Zfs.Zhi(false)
+}
+func (yinpinxiazaishuju *Yinpinxiazaishuju) Ziduanbianma() string {
+	return zf.Zfs.Ziduanbianma(false)
+}
+func (yinpinxiazaishuju *Yinpinxiazaishuju) Id() string {
+	return zf.Zfs.Id(false)
+}
+func (tizhengzhibiaozushijianshuju *Tizhengzhibiaozushijianshuju) Zhutibianma() string {
+	return zf.Zfs.Zhutibianma(false)
+}
+func (tizhengzhibiaozushijianshuju *Tizhengzhibiaozushijianshuju) Zhi() string {
+	return zf.Zfs.Zhi(false)
+}
+func (tizhengzhibiaozushijianshuju *Tizhengzhibiaozushijianshuju) Ziduanbianma() string {
+	return zf.Zfs.Ziduanbianma(false)
+}
+func (tizhengzhibiaozushijianshuju *Tizhengzhibiaozushijianshuju) Id() string {
+	return zf.Zfs.Id(false)
+}
+func (jiancefenxishuju *Jiancefenxishuju) Zhutibianma() string {
+	return zf.Zfs.Zhutibianma(false)
+}
+func (jiancefenxishuju *Jiancefenxishuju) Zhi() string {
+	return zf.Zfs.Zhi(false)
+}
+func (jiancefenxishuju *Jiancefenxishuju) Ziduanbianma() string {
+	return zf.Zfs.Ziduanbianma(false)
+}
+func (jiancefenxishuju *Jiancefenxishuju) Id() string {
+	return zf.Zfs.Id(false)
+}
+func (fuwufankuishuju *Fuwufankuishuju) Zhutibianma() string {
+	return zf.Zfs.Zhutibianma(false)
+}
+func (fuwufankuishuju *Fuwufankuishuju) Zhi() string {
+	return zf.Zfs.Zhi(false)
+}
+func (fuwufankuishuju *Fuwufankuishuju) Ziduanbianma() string {
+	return zf.Zfs.Ziduanbianma(false)
+}
+func (fuwufankuishuju *Fuwufankuishuju) Id() string {
+	return zf.Zfs.Id(false)
+}
+func (zhanghaoshijianshuju *Zhanghaoshijianshuju) Zhutibianma() string {
+	return zf.Zfs.Zhutibianma(false)
+}
+func (zhanghaoshijianshuju *Zhanghaoshijianshuju) Zhi() string {
+	return zf.Zfs.Zhi(false)
+}
+func (zhanghaoshijianshuju *Zhanghaoshijianshuju) Ziduanbianma() string {
+	return zf.Zfs.Ziduanbianma(false)
+}
+func (zhanghaoshijianshuju *Zhanghaoshijianshuju) Id() string {
+	return zf.Zfs.Id(false)
+}
+func (yinpinbofangshuju *Yinpinbofangshuju) Zhutibianma() string {
+	return zf.Zfs.Zhutibianma(false)
+}
+func (yinpinbofangshuju *Yinpinbofangshuju) Zhi() string {
+	return zf.Zfs.Zhi(false)
+}
+func (yinpinbofangshuju *Yinpinbofangshuju) Ziduanbianma() string {
+	return zf.Zfs.Ziduanbianma(false)
+}
+func (yinpinbofangshuju *Yinpinbofangshuju) Id() string {
+	return zf.Zfs.Id(false)
+}
+func (zidianshuju *Zidianshuju) Zhutibianma() string {
+	return zf.Zfs.Zhutibianma(false)
+}
+func (zidianshuju *Zidianshuju) Zhi() string {
+	return zf.Zfs.Zhi(false)
+}
+func (zidianshuju *Zidianshuju) Ziduanbianma() string {
+	return zf.Zfs.Ziduanbianma(false)
+}
+func (zidianshuju *Zidianshuju) Id() string {
+	return zf.Zfs.Id(false)
+}
+func (zhanghaojueseshuju *Zhanghaojueseshuju) Zhutibianma() string {
+	return zf.Zfs.Zhutibianma(false)
+}
+func (zhanghaojueseshuju *Zhanghaojueseshuju) Zhi() string {
+	return zf.Zfs.Zhi(false)
+}
+func (zhanghaojueseshuju *Zhanghaojueseshuju) Ziduanbianma() string {
+	return zf.Zfs.Ziduanbianma(false)
+}
+func (zhanghaojueseshuju *Zhanghaojueseshuju) Id() string {
+	return zf.Zfs.Id(false)
+}
+func (liuyanshuju *Liuyanshuju) Zhutibianma() string {
+	return zf.Zfs.Zhutibianma(false)
+}
+func (liuyanshuju *Liuyanshuju) Zhi() string {
+	return zf.Zfs.Zhi(false)
+}
+func (liuyanshuju *Liuyanshuju) Ziduanbianma() string {
+	return zf.Zfs.Ziduanbianma(false)
+}
+func (liuyanshuju *Liuyanshuju) Id() string {
+	return zf.Zfs.Id(false)
+}
+func (jibingshuju *Jibingshuju) Zhutibianma() string {
+	return zf.Zfs.Zhutibianma(false)
+}
+func (jibingshuju *Jibingshuju) Zhi() string {
+	return zf.Zfs.Zhi(false)
+}
+func (jibingshuju *Jibingshuju) Ziduanbianma() string {
+	return zf.Zfs.Ziduanbianma(false)
+}
+func (jibingshuju *Jibingshuju) Id() string {
+	return zf.Zfs.Id(false)
+}
+func (tizhengzhibiaozuzhibiaoshuju *Tizhengzhibiaozuzhibiaoshuju) Zhutibianma() string {
+	return zf.Zfs.Zhutibianma(false)
+}
+func (tizhengzhibiaozuzhibiaoshuju *Tizhengzhibiaozuzhibiaoshuju) Zhi() string {
+	return zf.Zfs.Zhi(false)
+}
+func (tizhengzhibiaozuzhibiaoshuju *Tizhengzhibiaozuzhibiaoshuju) Ziduanbianma() string {
+	return zf.Zfs.Ziduanbianma(false)
+}
+func (tizhengzhibiaozuzhibiaoshuju *Tizhengzhibiaozuzhibiaoshuju) Id() string {
+	return zf.Zfs.Id(false)
+}
+func (shijianshuju *Shijianshuju) Zhutibianma() string {
+	return zf.Zfs.Zhutibianma(false)
+}
+func (shijianshuju *Shijianshuju) Zhi() string {
+	return zf.Zfs.Zhi(false)
+}
+func (shijianshuju *Shijianshuju) Ziduanbianma() string {
+	return zf.Zfs.Ziduanbianma(false)
+}
+func (shijianshuju *Shijianshuju) Id() string {
+	return zf.Zfs.Id(false)
+}
+func (wenzhangshuju *Wenzhangshuju) Zhutibianma() string {
+	return zf.Zfs.Zhutibianma(false)
+}
+func (wenzhangshuju *Wenzhangshuju) Zhi() string {
+	return zf.Zfs.Zhi(false)
+}
+func (wenzhangshuju *Wenzhangshuju) Ziduanbianma() string {
+	return zf.Zfs.Ziduanbianma(false)
+}
+func (wenzhangshuju *Wenzhangshuju) Id() string {
+	return zf.Zfs.Id(false)
+}
+func (jueseziyuanshuju *Jueseziyuanshuju) Zhutibianma() string {
+	return zf.Zfs.Zhutibianma(false)
+}
+func (jueseziyuanshuju *Jueseziyuanshuju) Zhi() string {
+	return zf.Zfs.Zhi(false)
+}
+func (jueseziyuanshuju *Jueseziyuanshuju) Ziduanbianma() string {
+	return zf.Zfs.Ziduanbianma(false)
+}
+func (jueseziyuanshuju *Jueseziyuanshuju) Id() string {
 	return zf.Zfs.Id(false)
 }
 
-type Tizhengzhibiao struct{}
-
-func (tizhengzhibiao *Tizhengzhibiao) Zhutibianma() string {
-	return zf.Zfs.Zhutibianma(false)
-}
-func (tizhengzhibiao *Tizhengzhibiao) Zhi() string {
-	return zf.Zfs.Zhi(false)
-}
-func (tizhengzhibiao *Tizhengzhibiao) Ziduanbianma() string {
-	return zf.Zfs.Ziduanbianma(false)
-}
-func (tizhengzhibiao *Tizhengzhibiao) Id() string {
+func (juesejiegou *Juesejiegou) Id() string {
 	return zf.Zfs.Id(false)
 }
-
-type Shebei struct{}
-
-func (shebei *Shebei) Zhutibianma() string {
-	return zf.Zfs.Zhutibianma(false)
-}
-func (shebei *Shebei) Zhi() string {
-	return zf.Zfs.Zhi(false)
-}
-func (shebei *Shebei) Ziduanbianma() string {
+func (juesejiegou *Juesejiegou) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
 }
-func (shebei *Shebei) Id() string {
+func (juesejiegou *Juesejiegou) Ziduanleixing() string {
+	return zf.Zfs.Ziduanleixing(false)
+}
+func (juesejiegou *Juesejiegou) Ziduanmingcheng() string {
+	return zf.Zfs.Ziduanmingcheng(false)
+}
+func (yinpinjiegou *Yinpinjiegou) Id() string {
 	return zf.Zfs.Id(false)
 }
-
-type Ziyuan struct{}
-
-func (ziyuan *Ziyuan) Zhutibianma() string {
-	return zf.Zfs.Zhutibianma(false)
-}
-func (ziyuan *Ziyuan) Zhi() string {
-	return zf.Zfs.Zhi(false)
-}
-func (ziyuan *Ziyuan) Ziduanbianma() string {
+func (yinpinjiegou *Yinpinjiegou) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
 }
-func (ziyuan *Ziyuan) Id() string {
+func (yinpinjiegou *Yinpinjiegou) Ziduanleixing() string {
+	return zf.Zfs.Ziduanleixing(false)
+}
+func (yinpinjiegou *Yinpinjiegou) Ziduanmingcheng() string {
+	return zf.Zfs.Ziduanmingcheng(false)
+}
+func (tizhengzhibiaojiegou *Tizhengzhibiaojiegou) Id() string {
 	return zf.Zfs.Id(false)
 }
-
-type Zhanghao struct{}
-
-func (zhanghao *Zhanghao) Zhutibianma() string {
-	return zf.Zfs.Zhutibianma(false)
-}
-func (zhanghao *Zhanghao) Zhi() string {
-	return zf.Zfs.Zhi(false)
-}
-func (zhanghao *Zhanghao) Ziduanbianma() string {
+func (tizhengzhibiaojiegou *Tizhengzhibiaojiegou) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
 }
-func (zhanghao *Zhanghao) Id() string {
+func (tizhengzhibiaojiegou *Tizhengzhibiaojiegou) Ziduanleixing() string {
+	return zf.Zfs.Ziduanleixing(false)
+}
+func (tizhengzhibiaojiegou *Tizhengzhibiaojiegou) Ziduanmingcheng() string {
+	return zf.Zfs.Ziduanmingcheng(false)
+}
+func (shebeijiegou *Shebeijiegou) Id() string {
 	return zf.Zfs.Id(false)
 }
+func (shebeijiegou *Shebeijiegou) Ziduanbianma() string {
 
-type Yonghu struct{}
-
-func (yonghu *Yonghu) Zhutibianma() string {
-	return zf.Zfs.Zhutibianma(false)
-}
-func (yonghu *Yonghu) Zhi() string {
-	return zf.Zfs.Zhi(false)
-}
-func (yonghu *Yonghu) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
+
 }
-func (yonghu *Yonghu) Id() string {
+
+func (shebeijiegou *Shebeijiegou) Ziduanleixing() string {
+
+	return zf.Zfs.Ziduanleixing(false)
+
+}
+
+func (shebeijiegou *Shebeijiegou) Ziduanmingcheng() string {
+
+	return zf.Zfs.Ziduanmingcheng(false)
+
+}
+
+func (ziyuanjiegou *Ziyuanjiegou) Id() string {
+
 	return zf.Zfs.Id(false)
+
 }
 
-type Tizhengzhibiaozu struct{}
+func (ziyuanjiegou *Ziyuanjiegou) Ziduanbianma() string {
 
-func (tizhengzhibiaozu *Tizhengzhibiaozu) Zhutibianma() string {
-	return zf.Zfs.Zhutibianma(false)
-}
-func (tizhengzhibiaozu *Tizhengzhibiaozu) Zhi() string {
-	return zf.Zfs.Zhi(false)
-}
-func (tizhengzhibiaozu *Tizhengzhibiaozu) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
+
 }
-func (tizhengzhibiaozu *Tizhengzhibiaozu) Id() string {
+
+func (ziyuanjiegou *Ziyuanjiegou) Ziduanleixing() string {
+
+	return zf.Zfs.Ziduanleixing(false)
+
+}
+
+func (ziyuanjiegou *Ziyuanjiegou) Ziduanmingcheng() string {
+
+	return zf.Zfs.Ziduanmingcheng(false)
+
+}
+
+func (zhanghaojiegou *Zhanghaojiegou) Id() string {
+
 	return zf.Zfs.Id(false)
+
 }
 
-type Yinpinxiazai struct{}
+func (zhanghaojiegou *Zhanghaojiegou) Ziduanbianma() string {
 
-func (yinpinxiazai *Yinpinxiazai) Zhutibianma() string {
-	return zf.Zfs.Zhutibianma(false)
-}
-func (yinpinxiazai *Yinpinxiazai) Zhi() string {
-	return zf.Zfs.Zhi(false)
-}
-func (yinpinxiazai *Yinpinxiazai) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
+
 }
-func (yinpinxiazai *Yinpinxiazai) Id() string {
+
+func (zhanghaojiegou *Zhanghaojiegou) Ziduanleixing() string {
+
+	return zf.Zfs.Ziduanleixing(false)
+
+}
+
+func (zhanghaojiegou *Zhanghaojiegou) Ziduanmingcheng() string {
+
+	return zf.Zfs.Ziduanmingcheng(false)
+
+}
+
+func (yonghujiegou *Yonghujiegou) Id() string {
+
 	return zf.Zfs.Id(false)
+
 }
 
-type Tizhengzhibiaozushijian struct{}
+func (yonghujiegou *Yonghujiegou) Ziduanbianma() string {
 
-func (tizhengzhibiaozushijian *Tizhengzhibiaozushijian) Zhutibianma() string {
-	return zf.Zfs.Zhutibianma(false)
-}
-func (tizhengzhibiaozushijian *Tizhengzhibiaozushijian) Zhi() string {
-	return zf.Zfs.Zhi(false)
-}
-func (tizhengzhibiaozushijian *Tizhengzhibiaozushijian) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
+
 }
-func (tizhengzhibiaozushijian *Tizhengzhibiaozushijian) Id() string {
+
+func (yonghujiegou *Yonghujiegou) Ziduanleixing() string {
+
+	return zf.Zfs.Ziduanleixing(false)
+
+}
+
+func (yonghujiegou *Yonghujiegou) Ziduanmingcheng() string {
+
+	return zf.Zfs.Ziduanmingcheng(false)
+
+}
+
+func (tizhengzhibiaozujiegou *Tizhengzhibiaozujiegou) Id() string {
+
 	return zf.Zfs.Id(false)
+
 }
 
-type Jianceshuju struct{}
+func (tizhengzhibiaozujiegou *Tizhengzhibiaozujiegou) Ziduanbianma() string {
 
-func (jianceshuju *Jianceshuju) Zhutibianma() string {
-	return zf.Zfs.Zhutibianma(false)
-}
-func (jianceshuju *Jianceshuju) Zhi() string {
-	return zf.Zfs.Zhi(false)
-}
-func (jianceshuju *Jianceshuju) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
+
 }
-func (jianceshuju *Jianceshuju) Id() string {
+
+func (tizhengzhibiaozujiegou *Tizhengzhibiaozujiegou) Ziduanleixing() string {
+
+	return zf.Zfs.Ziduanleixing(false)
+
+}
+
+func (tizhengzhibiaozujiegou *Tizhengzhibiaozujiegou) Ziduanmingcheng() string {
+
+	return zf.Zfs.Ziduanmingcheng(false)
+
+}
+
+func (yinpinxiazaijiegou *Yinpinxiazaijiegou) Id() string {
+
 	return zf.Zfs.Id(false)
+
 }
 
-type Fuwufankui struct{}
+func (yinpinxiazaijiegou *Yinpinxiazaijiegou) Ziduanbianma() string {
 
-func (fuwufankui *Fuwufankui) Zhutibianma() string {
-	return zf.Zfs.Zhutibianma(false)
-}
-func (fuwufankui *Fuwufankui) Zhi() string {
-	return zf.Zfs.Zhi(false)
-}
-func (fuwufankui *Fuwufankui) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
+
 }
-func (fuwufankui *Fuwufankui) Id() string {
+
+func (yinpinxiazaijiegou *Yinpinxiazaijiegou) Ziduanleixing() string {
+
+	return zf.Zfs.Ziduanleixing(false)
+
+}
+
+func (yinpinxiazaijiegou *Yinpinxiazaijiegou) Ziduanmingcheng() string {
+
+	return zf.Zfs.Ziduanmingcheng(false)
+
+}
+
+func (tizhengzhibiaozushijianjiegou *Tizhengzhibiaozushijianjiegou) Id() string {
+
 	return zf.Zfs.Id(false)
+
 }
 
-type Zhanghaoshijian struct{}
+func (tizhengzhibiaozushijianjiegou *Tizhengzhibiaozushijianjiegou) Ziduanbianma() string {
 
-func (zhanghaoshijian *Zhanghaoshijian) Zhutibianma() string {
-	return zf.Zfs.Zhutibianma(false)
-}
-func (zhanghaoshijian *Zhanghaoshijian) Zhi() string {
-	return zf.Zfs.Zhi(false)
-}
-func (zhanghaoshijian *Zhanghaoshijian) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
+
 }
-func (zhanghaoshijian *Zhanghaoshijian) Id() string {
+
+func (tizhengzhibiaozushijianjiegou *Tizhengzhibiaozushijianjiegou) Ziduanleixing() string {
+
+	return zf.Zfs.Ziduanleixing(false)
+
+}
+
+func (tizhengzhibiaozushijianjiegou *Tizhengzhibiaozushijianjiegou) Ziduanmingcheng() string {
+
+	return zf.Zfs.Ziduanmingcheng(false)
+
+}
+
+func (jiancefenxijiegou *Jiancefenxijiegou) Id() string {
+
 	return zf.Zfs.Id(false)
+
 }
 
-type Yinpinbofang struct{}
+func (jiancefenxijiegou *Jiancefenxijiegou) Ziduanbianma() string {
 
-func (yinpinbofang *Yinpinbofang) Zhutibianma() string {
-	return zf.Zfs.Zhutibianma(false)
-}
-func (yinpinbofang *Yinpinbofang) Zhi() string {
-	return zf.Zfs.Zhi(false)
-}
-func (yinpinbofang *Yinpinbofang) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
+
 }
-func (yinpinbofang *Yinpinbofang) Id() string {
+
+func (jiancefenxijiegou *Jiancefenxijiegou) Ziduanleixing() string {
+
+	return zf.Zfs.Ziduanleixing(false)
+
+}
+
+func (jiancefenxijiegou *Jiancefenxijiegou) Ziduanmingcheng() string {
+
+	return zf.Zfs.Ziduanmingcheng(false)
+
+}
+
+func (fuwufankuijiegou *Fuwufankuijiegou) Id() string {
+
 	return zf.Zfs.Id(false)
+
 }
 
-type Zidian struct{}
+func (fuwufankuijiegou *Fuwufankuijiegou) Ziduanbianma() string {
 
-func (zidian *Zidian) Zhutibianma() string {
-	return zf.Zfs.Zhutibianma(false)
-}
-func (zidian *Zidian) Zhi() string {
-	return zf.Zfs.Zhi(false)
-}
-func (zidian *Zidian) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
+
 }
-func (zidian *Zidian) Id() string {
+
+func (fuwufankuijiegou *Fuwufankuijiegou) Ziduanleixing() string {
+
+	return zf.Zfs.Ziduanleixing(false)
+
+}
+
+func (fuwufankuijiegou *Fuwufankuijiegou) Ziduanmingcheng() string {
+
+	return zf.Zfs.Ziduanmingcheng(false)
+
+}
+
+func (zhanghaoshijianjiegou *Zhanghaoshijianjiegou) Id() string {
+
 	return zf.Zfs.Id(false)
+
 }
 
-type Zhanghaojuese struct{}
+func (zhanghaoshijianjiegou *Zhanghaoshijianjiegou) Ziduanbianma() string {
 
-func (zhanghaojuese *Zhanghaojuese) Zhutibianma() string {
-	return zf.Zfs.Zhutibianma(false)
-}
-func (zhanghaojuese *Zhanghaojuese) Zhi() string {
-	return zf.Zfs.Zhi(false)
-}
-func (zhanghaojuese *Zhanghaojuese) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
+
 }
-func (zhanghaojuese *Zhanghaojuese) Id() string {
+
+func (zhanghaoshijianjiegou *Zhanghaoshijianjiegou) Ziduanleixing() string {
+
+	return zf.Zfs.Ziduanleixing(false)
+
+}
+
+func (zhanghaoshijianjiegou *Zhanghaoshijianjiegou) Ziduanmingcheng() string {
+
+	return zf.Zfs.Ziduanmingcheng(false)
+
+}
+
+func (yinpinbofangjiegou *Yinpinbofangjiegou) Id() string {
+
 	return zf.Zfs.Id(false)
+
 }
 
-type Liuyan struct{}
+func (yinpinbofangjiegou *Yinpinbofangjiegou) Ziduanbianma() string {
 
-func (liuyan *Liuyan) Zhutibianma() string {
-	return zf.Zfs.Zhutibianma(false)
-}
-func (liuyan *Liuyan) Zhi() string {
-	return zf.Zfs.Zhi(false)
-}
-func (liuyan *Liuyan) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
+
 }
-func (liuyan *Liuyan) Id() string {
+
+func (yinpinbofangjiegou *Yinpinbofangjiegou) Ziduanleixing() string {
+
+	return zf.Zfs.Ziduanleixing(false)
+
+}
+
+func (yinpinbofangjiegou *Yinpinbofangjiegou) Ziduanmingcheng() string {
+
+	return zf.Zfs.Ziduanmingcheng(false)
+
+}
+
+func (zidianjiegou *Zidianjiegou) Id() string {
+
 	return zf.Zfs.Id(false)
+
 }
 
-type Jibing struct{}
+func (zidianjiegou *Zidianjiegou) Ziduanbianma() string {
 
-func (jibing *Jibing) Zhutibianma() string {
-	return zf.Zfs.Zhutibianma(false)
-}
-func (jibing *Jibing) Zhi() string {
-	return zf.Zfs.Zhi(false)
-}
-func (jibing *Jibing) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
+
 }
-func (jibing *Jibing) Id() string {
+
+func (zidianjiegou *Zidianjiegou) Ziduanleixing() string {
+
+	return zf.Zfs.Ziduanleixing(false)
+
+}
+
+func (zidianjiegou *Zidianjiegou) Ziduanmingcheng() string {
+
+	return zf.Zfs.Ziduanmingcheng(false)
+
+}
+
+func (zhanghaojuesejiegou *Zhanghaojuesejiegou) Id() string {
+
 	return zf.Zfs.Id(false)
+
 }
 
-type Tizhengzhibiaozuzhibiao struct{}
+func (zhanghaojuesejiegou *Zhanghaojuesejiegou) Ziduanbianma() string {
 
-func (tizhengzhibiaozutizhengzhibiao *Tizhengzhibiaozuzhibiao) Zhutibianma() string {
-	return zf.Zfs.Zhutibianma(false)
-}
-func (tizhengzhibiaozutizhengzhibiao *Tizhengzhibiaozuzhibiao) Zhi() string {
-	return zf.Zfs.Zhi(false)
-}
-func (tizhengzhibiaozutizhengzhibiao *Tizhengzhibiaozuzhibiao) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
+
 }
-func (tizhengzhibiaozutizhengzhibiao *Tizhengzhibiaozuzhibiao) Id() string {
+
+func (zhanghaojuesejiegou *Zhanghaojuesejiegou) Ziduanleixing() string {
+
+	return zf.Zfs.Ziduanleixing(false)
+
+}
+
+func (zhanghaojuesejiegou *Zhanghaojuesejiegou) Ziduanmingcheng() string {
+
+	return zf.Zfs.Ziduanmingcheng(false)
+
+}
+
+func (liuyanjiegou *Liuyanjiegou) Id() string {
+
 	return zf.Zfs.Id(false)
+
 }
 
-type Juese struct{}
+func (liuyanjiegou *Liuyanjiegou) Ziduanbianma() string {
 
-func (juese *Juese) Zhutibianma() string {
-	return zf.Zfs.Zhutibianma(false)
-}
-func (juese *Juese) Zhi() string {
-	return zf.Zfs.Zhi(false)
-}
-func (juese *Juese) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
+
 }
-func (juese *Juese) Id() string {
+
+func (liuyanjiegou *Liuyanjiegou) Ziduanleixing() string {
+
+	return zf.Zfs.Ziduanleixing(false)
+
+}
+
+func (liuyanjiegou *Liuyanjiegou) Ziduanmingcheng() string {
+
+	return zf.Zfs.Ziduanmingcheng(false)
+
+}
+
+func (jibingjiegou *Jibingjiegou) Id() string {
+
 	return zf.Zfs.Id(false)
+
 }
 
-type Shijian struct{}
+func (jibingjiegou *Jibingjiegou) Ziduanbianma() string {
 
-func (shijian *Shijian) Zhutibianma() string {
-	return zf.Zfs.Zhutibianma(false)
-}
-func (shijian *Shijian) Zhi() string {
-	return zf.Zfs.Zhi(false)
-}
-func (shijian *Shijian) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
+
 }
-func (shijian *Shijian) Id() string {
+
+func (jibingjiegou *Jibingjiegou) Ziduanleixing() string {
+
+	return zf.Zfs.Ziduanleixing(false)
+
+}
+
+func (jibingjiegou *Jibingjiegou) Ziduanmingcheng() string {
+
+	return zf.Zfs.Ziduanmingcheng(false)
+
+}
+
+func (tizhengzhibiaozuzhibiaojiegou *Tizhengzhibiaozuzhibiaojiegou) Id() string {
+
 	return zf.Zfs.Id(false)
+
 }
 
-type Wenzhang struct{}
+func (tizhengzhibiaozuzhibiaojiegou *Tizhengzhibiaozuzhibiaojiegou) Ziduanbianma() string {
 
-func (wenzhang *Wenzhang) Zhutibianma() string {
-	return zf.Zfs.Zhutibianma(false)
-}
-func (wenzhang *Wenzhang) Zhi() string {
-	return zf.Zfs.Zhi(false)
-}
-func (wenzhang *Wenzhang) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
+
 }
-func (wenzhang *Wenzhang) Id() string {
+
+func (tizhengzhibiaozuzhibiaojiegou *Tizhengzhibiaozuzhibiaojiegou) Ziduanleixing() string {
+
+	return zf.Zfs.Ziduanleixing(false)
+
+}
+
+func (tizhengzhibiaozuzhibiaojiegou *Tizhengzhibiaozuzhibiaojiegou) Ziduanmingcheng() string {
+
+	return zf.Zfs.Ziduanmingcheng(false)
+
+}
+
+func (shijianjiegou *Shijianjiegou) Id() string {
+
 	return zf.Zfs.Id(false)
+
 }
 
-type Jueseziyuan struct{}
+func (shijianjiegou *Shijianjiegou) Ziduanbianma() string {
 
-func (jueseziyuan *Jueseziyuan) Zhutibianma() string {
-	return zf.Zfs.Zhutibianma(false)
-}
-func (jueseziyuan *Jueseziyuan) Zhi() string {
-	return zf.Zfs.Zhi(false)
-}
-func (jueseziyuan *Jueseziyuan) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
+
 }
-func (jueseziyuan *Jueseziyuan) Id() string {
+
+func (shijianjiegou *Shijianjiegou) Ziduanleixing() string {
+
+	return zf.Zfs.Ziduanleixing(false)
+
+}
+
+func (shijianjiegou *Shijianjiegou) Ziduanmingcheng() string {
+
+	return zf.Zfs.Ziduanmingcheng(false)
+
+}
+
+func (wenzhangjiegou *Wenzhangjiegou) Id() string {
+
 	return zf.Zfs.Id(false)
+
+}
+
+func (wenzhangjiegou *Wenzhangjiegou) Ziduanbianma() string {
+
+	return zf.Zfs.Ziduanbianma(false)
+
+}
+
+func (wenzhangjiegou *Wenzhangjiegou) Ziduanleixing() string {
+
+	return zf.Zfs.Ziduanleixing(false)
+
+}
+
+func (wenzhangjiegou *Wenzhangjiegou) Ziduanmingcheng() string {
+
+	return zf.Zfs.Ziduanmingcheng(false)
+
+}
+
+func (jueseziyuanjiegou *Jueseziyuanjiegou) Id() string {
+
+	return zf.Zfs.Id(false)
+
+}
+
+func (jueseziyuanjiegou *Jueseziyuanjiegou) Ziduanbianma() string {
+
+	return zf.Zfs.Ziduanbianma(false)
+
+}
+
+func (jueseziyuanjiegou *Jueseziyuanjiegou) Ziduanleixing() string {
+
+	return zf.Zfs.Ziduanleixing(false)
+
+}
+
+func (jueseziyuanjiegou *Jueseziyuanjiegou) Ziduanmingcheng() string {
+
+	return zf.Zfs.Ziduanmingcheng(false)
+
 }
