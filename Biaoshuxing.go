@@ -118,3 +118,43 @@ func Fanshebiaojiegou(mokuaiming string) map[string][]string {
 	}
 	return ret
 }
+
+func Fanshebiaos(mokuai string) []string {
+	ret := []string{}
+	m := peizhi.Mokuaiming{}
+	rtm := reflect.TypeOf(m)
+	for i := zfzhi.Zhi.Shuzi0(); i < rtm.NumField(); i++ {
+		rtmf := rtm.Field(i)
+		rtmfn := strings.ToLower(rtmf.Type.Name())
+		if rtmfn == mokuai {
+			rtmff := rtmf.Type
+			for j := zfzhi.Zhi.Shuzi0(); j < rtmff.NumField(); j ++ {
+				rtmfff := rtmff.Field(j).Type
+				rtmfffn := strings.Split(rtmfff.String(), zfzhi.Zhi.Dh())[zfzhi.Zhi.Shuzi1()]
+				ret = append(ret, rtmfffn)
+			}
+		}
+	}
+	return ret
+}
+
+func Fanshejichubiao() []string {
+	ret := []string{}
+	jc := Jichu{}
+	rtjc := reflect.TypeOf(jc)
+	for i := zfzhi.Zhi.Shuzi0(); i < rtjc.NumField(); i++ {
+		rtjcf := rtjc.Field(i).Name
+		ret = append(ret, rtjcf)
+	}
+	return ret
+}
+func Fanshejichushuju() []string {
+	ret := []string{}
+	jc := Jichushuju{}
+	rtjc := reflect.TypeOf(jc)
+	for i := zfzhi.Zhi.Shuzi0(); i < rtjc.NumField(); i++ {
+		rtjcf := rtjc.Field(i).Name
+		ret = append(ret, rtjcf)
+	}
+	return ret
+}
