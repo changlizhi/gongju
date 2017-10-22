@@ -1,6 +1,8 @@
 package gongju
 
 type Jichu struct {
-	Id     string
-	Ziduan string
+	Id              string
+	Ziduanbianma    string
+	Ziduanleixing   string
+	Ziduanmingcheng string
 }

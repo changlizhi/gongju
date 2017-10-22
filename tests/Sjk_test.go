@@ -1,9 +1,9 @@
 package tests
 
 import (
+	"gongju/sjkmhsydata"
 	"log"
 	"testing"
-	"gongju/sjkmhsydata"
 )
 
 func TestPrintsome(t *testing.T) {

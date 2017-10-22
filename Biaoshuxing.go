@@ -17,7 +17,7 @@ func Fanshebiaolies(mokuaiming string) (biaolie map[string]string, biao map[stri
 	bjg := Fanshebiaojiegou(mokuaiming)
 	for k, vs := range bjg {
 		for _, v := range vs {
-			biaolie[k + v] = strings.ToLower(k + v)
+			biaolie[k+v] = strings.ToLower(k + v)
 			biao[k] = strings.ToLower(k)
 			lie[v] = strings.ToLower(v)
 		}
@@ -128,7 +128,7 @@ func Fanshebiaos(mokuai string) []string {
 		rtmfn := strings.ToLower(rtmf.Type.Name())
 		if rtmfn == mokuai {
 			rtmff := rtmf.Type
-			for j := zfzhi.Zhi.Shuzi0(); j < rtmff.NumField(); j ++ {
+			for j := zfzhi.Zhi.Shuzi0(); j < rtmff.NumField(); j++ {
 				rtmfff := rtmff.Field(j).Type
 				rtmfffn := strings.Split(rtmfff.String(), zfzhi.Zhi.Dh())[zfzhi.Zhi.Shuzi1()]
 				ret = append(ret, rtmfffn)
