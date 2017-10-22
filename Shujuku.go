@@ -35,7 +35,7 @@ func (zdbj *Ziduanbiaoji) Idbiaoji() string {
 	return zf.Zfs.Zhujian(false)
 }
 func (zdbj *Ziduanbiaoji) Bianmabiaoji() string {
-	return zf.Zfs.Sql(false) + zf.Zfs.Bianma(false)//DT_所有的编码都以DT_开头
+	return zf.Zfs.Sql(false) + zf.Zfs.Bianma(false) //DT_所有的编码都以DT_开头
 }
 func (zdbj *Ziduanbiaoji) Youxiaoxingbiaoji() string {
 	return zfzhi.Zhi.Shuzi1w()
@@ -163,4 +163,3 @@ func (bbj *Biaobiaoji) Jibingbiaoji() string {
 func (bbj *Biaobiaoji) Cujinfanganbiaoji() string {
 	return zf.Zfs.Yiban(false)
 }
-
