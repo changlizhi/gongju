@@ -13,7 +13,7 @@ type Mhsydata struct {
 	Tizhengzhibiaozumh        *Tizhengzhibiaozu
 	Yinpinxiazaimh            *Yinpinxiazai
 	Tizhengzhibiaozushijianmh *Tizhengzhibiaozushijian
-	Tizhengzhibiaoshujumh     *Tizhengzhibiaoshuju
+	Jianceshujumh             *Jianceshuju
 	Fuwufankuimh              *Fuwufankui
 	Zhanghaoshijianmh         *Zhanghaoshijian
 	Yinpinbofangmh            *Yinpinbofang
@@ -21,7 +21,7 @@ type Mhsydata struct {
 	Zhanghaojuesemh           *Zhanghaojuese
 	Liuyanmh                  *Liuyan
 	Jibingmh                  *Jibing
-	Tizhengzhibiaozuxiangmumh *Tizhengzhibiaozuxiangmu
+	Tizhengzhibiaozuzhibiaomh *Tizhengzhibiaozuzhibiao
 	Shijianmh                 *Shijian
 	Wenzhangmh                *Wenzhang
 	Jueseziyuanmh             *Jueseziyuan
@@ -43,16 +43,16 @@ func (yinpin *Yinpin) Id() string {
 
 type Tizhengzhibiao struct{}
 
-func (xiangmu *Tizhengzhibiao) Zhutibianma() string {
+func (tizhengzhibiao *Tizhengzhibiao) Zhutibianma() string {
 	return zf.Zfs.Zhutibianma(false)
 }
-func (xiangmu *Tizhengzhibiao) Zhi() string {
+func (tizhengzhibiao *Tizhengzhibiao) Zhi() string {
 	return zf.Zfs.Zhi(false)
 }
-func (xiangmu *Tizhengzhibiao) Ziduanbianma() string {
+func (tizhengzhibiao *Tizhengzhibiao) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
 }
-func (xiangmu *Tizhengzhibiao) Id() string {
+func (tizhengzhibiao *Tizhengzhibiao) Id() string {
 	return zf.Zfs.Id(false)
 }
 
@@ -118,16 +118,16 @@ func (yonghu *Yonghu) Id() string {
 
 type Tizhengzhibiaozu struct{}
 
-func (xiangmuzu *Tizhengzhibiaozu) Zhutibianma() string {
+func (tizhengzhibiaozu *Tizhengzhibiaozu) Zhutibianma() string {
 	return zf.Zfs.Zhutibianma(false)
 }
-func (xiangmuzu *Tizhengzhibiaozu) Zhi() string {
+func (tizhengzhibiaozu *Tizhengzhibiaozu) Zhi() string {
 	return zf.Zfs.Zhi(false)
 }
-func (xiangmuzu *Tizhengzhibiaozu) Ziduanbianma() string {
+func (tizhengzhibiaozu *Tizhengzhibiaozu) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
 }
-func (xiangmuzu *Tizhengzhibiaozu) Id() string {
+func (tizhengzhibiaozu *Tizhengzhibiaozu) Id() string {
 	return zf.Zfs.Id(false)
 }
 
@@ -148,31 +148,31 @@ func (yinpinxiazai *Yinpinxiazai) Id() string {
 
 type Tizhengzhibiaozushijian struct{}
 
-func (xiangmuzushijian *Tizhengzhibiaozushijian) Zhutibianma() string {
+func (tizhengzhibiaozushijian *Tizhengzhibiaozushijian) Zhutibianma() string {
 	return zf.Zfs.Zhutibianma(false)
 }
-func (xiangmuzushijian *Tizhengzhibiaozushijian) Zhi() string {
+func (tizhengzhibiaozushijian *Tizhengzhibiaozushijian) Zhi() string {
 	return zf.Zfs.Zhi(false)
 }
-func (xiangmuzushijian *Tizhengzhibiaozushijian) Ziduanbianma() string {
+func (tizhengzhibiaozushijian *Tizhengzhibiaozushijian) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
 }
-func (xiangmuzushijian *Tizhengzhibiaozushijian) Id() string {
+func (tizhengzhibiaozushijian *Tizhengzhibiaozushijian) Id() string {
 	return zf.Zfs.Id(false)
 }
 
-type Tizhengzhibiaoshuju struct{}
+type Jianceshuju struct{}
 
-func (xiangmushuju *Tizhengzhibiaoshuju) Zhutibianma() string {
+func (jianceshuju *Jianceshuju) Zhutibianma() string {
 	return zf.Zfs.Zhutibianma(false)
 }
-func (xiangmushuju *Tizhengzhibiaoshuju) Zhi() string {
+func (jianceshuju *Jianceshuju) Zhi() string {
 	return zf.Zfs.Zhi(false)
 }
-func (xiangmushuju *Tizhengzhibiaoshuju) Ziduanbianma() string {
+func (jianceshuju *Jianceshuju) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
 }
-func (xiangmushuju *Tizhengzhibiaoshuju) Id() string {
+func (jianceshuju *Jianceshuju) Id() string {
 	return zf.Zfs.Id(false)
 }
 
@@ -281,18 +281,18 @@ func (jibing *Jibing) Id() string {
 	return zf.Zfs.Id(false)
 }
 
-type Tizhengzhibiaozuxiangmu struct{}
+type Tizhengzhibiaozuzhibiao struct{}
 
-func (xiangmuzuxiangmu *Tizhengzhibiaozuxiangmu) Zhutibianma() string {
+func (tizhengzhibiaozutizhengzhibiao *Tizhengzhibiaozuzhibiao) Zhutibianma() string {
 	return zf.Zfs.Zhutibianma(false)
 }
-func (xiangmuzuxiangmu *Tizhengzhibiaozuxiangmu) Zhi() string {
+func (tizhengzhibiaozutizhengzhibiao *Tizhengzhibiaozuzhibiao) Zhi() string {
 	return zf.Zfs.Zhi(false)
 }
-func (xiangmuzuxiangmu *Tizhengzhibiaozuxiangmu) Ziduanbianma() string {
+func (tizhengzhibiaozutizhengzhibiao *Tizhengzhibiaozuzhibiao) Ziduanbianma() string {
 	return zf.Zfs.Ziduanbianma(false)
 }
-func (xiangmuzuxiangmu *Tizhengzhibiaozuxiangmu) Id() string {
+func (tizhengzhibiaozutizhengzhibiao *Tizhengzhibiaozuzhibiao) Id() string {
 	return zf.Zfs.Id(false)
 }
 
