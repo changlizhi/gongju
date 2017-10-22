@@ -79,13 +79,13 @@ func Zhongwen(lieming string) string {
 }
 
 func Fanshejichulie() []string {
-	m := &Jichuziduan{}
 	ret := []string{}
-	rvm := reflect.ValueOf(m)
-	for i := zfzhi.Zhi.Shuzi0(); i < rvm.NumMethod(); i++ {
-		rvmv := rvm.Method(i).Call(nil)[zfzhi.Zhi.Shuzi0()].String()
-		ret = append(ret, rvmv)
-	}
+	//m := &Jichuziduan{}
+	//rvm := reflect.ValueOf(m)
+	//for i := zfzhi.Zhi.Shuzi0(); i < rvm.NumMethod(); i++ {
+	//	rvmv := rvm.Method(i).Call(nil)[zfzhi.Zhi.Shuzi0()].String()
+	//	ret = append(ret, rvmv)
+	//}
 	return ret
 }
 
