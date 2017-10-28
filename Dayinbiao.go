@@ -149,10 +149,10 @@ func Dayinbiao() {
 	//log.Println(buffershuju)
 	//log.Println(bufferjiegou)
 	//log.Println(buffershujum)
-	//log.Println(bufferjiegoum)
+	log.Println(bufferjiegoum)
 	//log.Println(buffermh)
 	//log.Println(bufferzf)
 	//log.Println(bufferlx)
 	//log.Println(bufferzw)
-	log.Println(buffercd)
+	//log.Println(buffercd)
 }
