@@ -5,6 +5,7 @@ import (
 	"gongju"
 	"log"
 	"testing"
+	"gongju/sjkmh"
 )
 
 func TestFanshebiaojiegou(t *testing.T) {
@@ -19,3 +20,7 @@ func TestBiaoliesfanshe(t *testing.T) {
 func TestFanshejichulie(t *testing.T) {
 	log.Println(gongju.Fanshejichulie())
 }
+func TestBiaos(t *testing.T) {
+	log.Println(sjkmh.Biaos)
+}
+
