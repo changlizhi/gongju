@@ -3,9 +3,9 @@ package tests
 import (
 	"changliang/zf"
 	"gongju"
+	"gongju/sjkmh"
 	"log"
 	"testing"
-	"gongju/sjkmh"
 )
 
 func TestFanshebiaojiegou(t *testing.T) {
@@ -23,4 +23,3 @@ func TestFanshejichulie(t *testing.T) {
 func TestBiaos(t *testing.T) {
 	log.Println(sjkmh.Biaos)
 }
-

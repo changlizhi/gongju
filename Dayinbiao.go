@@ -11,10 +11,10 @@ import (
 )
 
 func dayincl(b string, leixing string,
-bufferzf *bytes.Buffer,
-bufferlx *bytes.Buffer,
-buffercd *bytes.Buffer,
-bufferzw *bytes.Buffer) {
+	bufferzf *bytes.Buffer,
+	bufferlx *bytes.Buffer,
+	buffercd *bytes.Buffer,
+	bufferzw *bytes.Buffer) {
 	mingcheng := b + strings.ToLower(leixing)
 	//	func (zf *Zf) Xxxshuju(xiaoxie bool) string {
 	funzf := zf.Zfs.Func(true) + zfzhi.Zhi.Kgf() + zfzhi.Zhi.Xkhz() + zf.Zfs.Zf(true) +
@@ -142,8 +142,8 @@ func Dayinbiao() {
 			bufferjiegoum.WriteString(retstr)
 			bufferjiegoum.WriteString(zfzhi.Zhi.Hhf() + zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf())
 		}
-		dayincl(b, zf.Zfs.Shuju(false), bufferzf, bufferlx, buffercd, bufferzw, )
-		dayincl(b, zf.Zfs.Jiegou(false), bufferzf, bufferlx, buffercd, bufferzw, )
+		dayincl(b, zf.Zfs.Shuju(false), bufferzf, bufferlx, buffercd, bufferzw)
+		dayincl(b, zf.Zfs.Jiegou(false), bufferzf, bufferlx, buffercd, bufferzw)
 	}
 	buffermh.WriteString(zfzhi.Zhi.Hhf() + zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf())
 	//log.Println(buffershuju)
