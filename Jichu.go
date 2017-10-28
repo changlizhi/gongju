@@ -5,4 +5,6 @@ type Jichu struct {
 	Ziduanbianma    string
 	Ziduanleixing   string
 	Ziduanmingcheng string
+	Ziduanchangdu   string
+	Ziduanyanzheng  string
 }
